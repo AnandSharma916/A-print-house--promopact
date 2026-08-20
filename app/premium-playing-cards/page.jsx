@@ -1,0 +1,866 @@
+import Link from 'next/link';
+import LegacyEngine from '@/components/LegacyEngine';
+import './premium-playing-cards.css';
+import '../styles/inner-page-fixes.css';
+
+export const metadata = {
+  title: "ARTISAN PRESS | Premium Playing Cards Manufacturer",
+  alternates: { canonical: "/premium-playing-cards" },
+};
+
+export default function PremiumPlayingCardsPage() {
+  return (
+    <div className="page-root">
+      <LegacyEngine variant="product" />
+      {/* NAVBAR (matched to index.html) */}
+      <header id={"site-header"}>
+        <div className={"hdr-wrap"}>
+          <Link href={"/"} className={"hdr-logo"}>
+            <img src={"/img/aiph-logo.avif"} alt={"AIPH"} className={"hdr-logo-img"} />
+            <div className={"hdr-logo-text"}>
+              <span className={"hlt-main"}>
+                A India
+              </span>
+              <span className={"hlt-sub"}>
+                Print House
+              </span>
+            </div>
+          </Link>
+          <nav className={"hdr-nav"}>
+            <Link href={"/"} className={"hdr-link"}>
+              Home
+            </Link>
+            <div className={"hdr-dropdown"}>
+              <a href={"#"} className={"hdr-link"}>
+                Collection
+                <span className={"hdr-caret"}>
+                  ▾
+                </span>
+              </a>
+              <div className={"hdr-menu"}>
+                <Link href={"/premium-playing-cards"} className={"hdr-menu-link is-current"}>
+                  Premium Playing Cards
+                </Link>
+                <Link href={"/promotional-playing-cards"} className={"hdr-menu-link"}>
+                  Promotional Playing Cards
+                </Link>
+                <Link href={"/advertisement-playing-cards"} className={"hdr-menu-link"}>
+                  Advertisement Playing Cards
+                </Link>
+                <Link href={"/card-games"} className={"hdr-menu-link"}>
+                  Card Games
+                </Link>
+                <Link href={"/corporate-playing-cards"} className={"hdr-menu-link"}>
+                  Corporate Playing Cards
+                </Link>
+                <Link href={"/souvenir-playing-cards"} className={"hdr-menu-link"}>
+                  Customised Playing Cards
+                </Link>
+                <Link href={"/branded-playing-cards"} className={"hdr-menu-link"}>
+                  Branded Playing Cards
+                </Link>
+                <Link href={"/poker-cards"} className={"hdr-menu-link"}>
+                  Poker Cards
+                </Link>
+                <Link href={"/educational-cards"} className={"hdr-menu-link"}>
+                  Educational Cards
+                </Link>
+                <Link href={"/flash-cards"} className={"hdr-menu-link"}>
+                  Flash Cards
+                </Link>
+              </div>
+            </div>
+            <Link href={"/about-us"} className={"hdr-link"}>
+              About Us
+            </Link>
+            <Link href={"/contact-us"} className={"hdr-link"}>
+              Contact us
+            </Link>
+          </nav>
+          <a href={"#"} className={"hdr-btn magnetic"}>
+            <span>
+              Bespoke Order
+            </span>
+            <div className={"hdr-btn-glow"}></div>
+          </a>
+          <button className={"hdr-burger"} id={"hdr-burger"} aria-label={"Open menu"}>
+            <div className={"burger-bar b1"}></div>
+            <div className={"burger-bar b2"}></div>
+          </button>
+        </div>
+      </header>
+      {/* FULLSCREEN NAV */}
+      <div className={"nav-overlay"} id={"nav-overlay"}>
+        <div className={"no-bg-panel"}></div>
+        <div className={"no-content"}>
+          <div className={"no-links"}>
+            <Link href={"/"} className={"no-link"}>
+              <em className={"no-idx"}>
+                01
+              </em>
+              <span>
+                Home
+              </span>
+            </Link>
+            <div className={"no-link no-collection-group"}>
+              <div className={"no-collection-head"}>
+                <em className={"no-idx"}>
+                  02
+                </em>
+                <span>
+                  Collection
+                </span>
+              </div>
+              <div className={"no-collection-links"}>
+                <Link href={"/premium-playing-cards"} className={"no-col-link"}>
+                  Premium Playing Cards
+                </Link>
+                <Link href={"/promotional-playing-cards"} className={"no-col-link"}>
+                  Promotional Playing Cards
+                </Link>
+                <Link href={"/advertisement-playing-cards"} className={"no-col-link"}>
+                  Advertisement Playing Cards
+                </Link>
+                <Link href={"/card-games"} className={"no-col-link"}>
+                  Card Games
+                </Link>
+                <Link href={"/corporate-playing-cards"} className={"no-col-link"}>
+                  Corporate Playing Cards
+                </Link>
+                <Link href={"/souvenir-playing-cards"} className={"no-col-link"}>
+                  Customised Playing Cards
+                </Link>
+                <Link href={"/branded-playing-cards"} className={"no-col-link"}>
+                  Branded Playing Cards
+                </Link>
+                <Link href={"/poker-cards"} className={"no-col-link"}>
+                  Poker Cards
+                </Link>
+                <Link href={"/educational-cards"} className={"no-col-link"}>
+                  Educational Cards
+                </Link>
+                <Link href={"/flash-cards"} className={"no-col-link"}>
+                  Flash Cards
+                </Link>
+              </div>
+            </div>
+            <Link href={"/about-us"} className={"no-link"}>
+              <em className={"no-idx"}>
+                03
+              </em>
+              <span>
+                About Us
+              </span>
+            </Link>
+            <a href={"#"} className={"no-link"}>
+              <em className={"no-idx"}>
+                04
+              </em>
+              <span>
+                Why Us
+              </span>
+            </a>
+            <Link href={"/contact-us"} className={"no-link"}>
+              <em className={"no-idx"}>
+                05
+              </em>
+              <span>
+                Contact Us
+              </span>
+            </Link>
+          </div>
+          <div className={"no-side"}>
+            <div className={"no-suits-grid"}>
+              <span>
+                ♠
+              </span>
+              <span className={"r"}>
+                ♥
+              </span>
+              <span>
+                ♣
+              </span>
+              <span className={"r"}>
+                ♦
+              </span>
+            </div>
+            <div className={"no-contact-info"}>
+              <p>
+                marketingaiph7@gmail.com
+              </p>
+              <p>
+                +91-9810614016
+              </p>
+              <p>
+                New Delhi, India
+              </p>
+            </div>
+          </div>
+        </div>
+        <button className={"no-close"} id={"no-close"}>
+          ✕
+        </button>
+      </div>
+      {/* Hero Section */}
+      <section className={"hero"}>
+        <div className={"hero__bg"}>
+          <img alt={"Premium Playing Cards Hero"} src={"/img/premium-hero-bg-new.avif"} />
+          <div className={"hero__overlay"}></div>
+          <div className={"hero__gradient"}></div>
+        </div>
+        <div id={"hero-particles"}></div>
+        <div className={"hero__content"}>
+          <span className={"hero__eyebrow"}>
+            ESTABLISHED IN INDIA
+          </span>
+          <h1 className={"hero__title"}>
+            Leading Playing Cards
+            <br />
+            <em>
+              Manufacturer in India
+            </em>
+          </h1>
+          <p className={"hero__text"}>
+            High-Quality Playing Cards by A India Print House. Meticulously engineered for professional handling and timeless aesthetic appeal.
+          </p>
+          <div>
+            <button className={"btn-cream"}>
+              Order Now
+            </button>
+          </div>
+        </div>
+        {/* Scroll Indicator */}
+        <div className={"hero__scroll"}>
+          <span>
+            Scroll
+          </span>
+          <div className={"hero__scroll-line"}></div>
+        </div>
+      </section>
+      {/* Introduction Section (Heritage) */}
+      <section className={"section section--padded bg-surface"}>
+        <div className={"container heritage__grid"}>
+          <div className={"heritage__text"}>
+            <span className={"eyebrow"}>
+              Our Heritage
+            </span>
+            <h2 className={"headline-lg heritage__title"} data-split="">
+              Crafting Excellence Since Inception
+            </h2>
+            <p className={"body-md heritage__p"}>
+              A India Print House is a trusted manufacturer and exporter of premium playing cards. We provide custom solutions for prestigious businesses, international brands, and professional magicians worldwide.
+            </p>
+            <p className={"body-md heritage__p heritage__p--last"}>
+              Our process marries ancient tactile sensibilities with modern offset precision, ensuring every deck that leaves our house is a masterpiece of design and functionality.
+            </p>
+            <div className={"discover"}>
+              <div className={"discover__icon"}>
+                <span className={"material-symbols-outlined"}>
+                  arrow_forward
+                </span>
+              </div>
+              <span className={"label-md discover__label"}>
+                Discover our process
+              </span>
+            </div>
+          </div>
+          <div className={"heritage__media"}>
+            <div className={"media-frame"}>
+              <img alt={"PVR Gourmet Snacks Premium Playing Cards — A India Print House"} src={"/img/pvr-gourmet-snacks-Photoroom-centred.avif"} />
+              <div className={"media-frame__ring"}></div>
+            </div>
+            {/* Collector's Badge */}
+            <div className={"badge"}>
+              <div className={"badge__inner"}>
+                <svg className={"badge__svg"} viewBox={"0 0 100 100"}>
+                  <defs>
+                    <path d={"M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"} id={"textCircle"}></path>
+                  </defs>
+                  <text>
+                    <textpath xlinkHref={"#textCircle"}>
+                      ARTISAN PRESS • QUALITY CERTIFIED • SINCE 1998 •
+                    </textpath>
+                  </text>
+                </svg>
+                <div className={"badge__core"}>
+                  <span className={"material-symbols-outlined"}>
+                    workspace_premium
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Durable & Attractive Section */}
+      <section className={"section bg-dark"}>
+        <div className={"container section--padded"}>
+          <div className={"section-head"}>
+            <h2 className={"headline-lg"} data-split="">
+              Durable and Creative Playing Cards
+            </h2>
+            <div className={"section-head__rule"} data-scroll="" data-scroll-class={"is-inview"}></div>
+            <p className={"body-lg section-head__text"}>
+              We use high-grade linen-finish card material and advanced UV printing techniques to create decks that withstand the test of time and intensive play.
+            </p>
+          </div>
+          <div className={"durable__grid"}>
+            <div className={"atropos deck-atropos"}>
+              <div className={"atropos-scale"}>
+                <div className={"atropos-rotate"}>
+                  <div className={"atropos-inner"}>
+                    <div className={"deck-card premium-blue-panel"}>
+                      <div className={"deck-frame"} aria-hidden={"true"}></div>
+                      <img className={"no-parallax"} alt={"Netflix Premium Playing Cards — A India Print House"} src={"/img/netflix-card-deckfit.avif"} />
+                      <div className={"deck-card__caption"}>
+                        <div>
+                          <span className={"label-sm deck-card__kicker"}>
+                            Performance Finish
+                          </span>
+                          <h3 className={"headline-md deck-card__title"}>
+                            Smooth Handling &amp; Snap
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={"atropos deck-atropos"}>
+              <div className={"atropos-scale"}>
+                <div className={"atropos-rotate"}>
+                  <div className={"atropos-inner"}>
+                    <div className={"deck-card premium-blue-panel"}>
+                      <div className={"deck-frame"} aria-hidden={"true"}></div>
+                      <img className={"no-parallax"} alt={"YouTube Premium Playing Cards — A India Print House"} src={"/img/youtube-card-premium-deckfit.avif"} />
+                      <div className={"deck-card__caption"}>
+                        <div>
+                          <span className={"label-sm deck-card__kicker"}>
+                            Master Craft
+                          </span>
+                          <h3 className={"headline-md deck-card__title"}>
+                            Durable Luxury Decks
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* 3D Card Showcase (Three.js) */}
+      <section className={"card-showcase"} id={"card-showcase"}>
+        <div className={"card-showcase__content container section--padded"}>
+          <span className={"eyebrow"}>
+            Crafted in Every Suit
+          </span>
+          <h2 className={"display-lg card-showcase__title"}>
+            A Deck Engineered to Perfection
+          </h2>
+          <p className={"card-showcase__text"}>
+            From the cut to the shuffle, every card is built for flawless handling, lasting snap, and timeless table presence.
+          </p>
+        </div>
+      </section>
+      {/* Product Features Bento Grid */}
+      <section className={"section section--padded bg-surface"}>
+        <div className={"container"}>
+          <div className={"specs__head"}>
+            <span className={"eyebrow specs__kicker"}>
+              Technical Specs
+            </span>
+            <h2 className={"headline-lg specs__title"} data-split="">
+              Unrivaled Quality in Every Detail
+            </h2>
+          </div>
+          <div className={"bento"}>
+            {/* Large Feature */}
+            <div className={"bento__cell bento__cell--feature"}>
+              <div>
+                <span className={"material-symbols-outlined bento__icon bento__icon--lg"}>
+                  layers
+                </span>
+                <h4 className={"headline-md bento__feature-title"}>
+                  Premium Quality Material
+                </h4>
+                <p className={"body-md bento__desc"}>
+                  Sourced from the world's finest paper mills, our material offers the perfect balance of weight, flex, and longevity.
+                </p>
+              </div>
+              <div className={"bento__meta"}>
+                <span className={"label-sm bento__meta-label"}>
+                  Standard: 310GSM
+                </span>
+                <span className={"material-symbols-outlined"} style={{ color: "var(--foil-gold)" }}>
+                  check_circle
+                </span>
+              </div>
+            </div>
+            {/* Small Features */}
+            <div className={"bento__cell"}>
+              <span className={"material-symbols-outlined bento__icon"}>
+                brush
+              </span>
+              <h5 className={"label-md bento__heading"}>
+                Sharp Printing
+              </h5>
+              <p className={"bento__desc bento__desc--sm"}>
+                Vivid colors and razor-sharp line work on every suit.
+              </p>
+            </div>
+            <div className={"bento__cell"}>
+              <span className={"material-symbols-outlined bento__icon"}>
+                water_drop
+              </span>
+              <h5 className={"label-md bento__heading"}>
+                Smooth Finish
+              </h5>
+              <p className={"bento__desc bento__desc--sm"}>
+                Proprietary coatings for flawless fans and spreads.
+              </p>
+            </div>
+            <div className={"bento__cell"}>
+              <span className={"material-symbols-outlined bento__icon"}>
+                palette
+              </span>
+              <h5 className={"label-md bento__heading"}>
+                Custom Design
+              </h5>
+              <p className={"bento__desc bento__desc--sm"}>
+                Fully bespoke artwork tailored to your brand's DNA.
+              </p>
+            </div>
+            <div className={"bento__cell"}>
+              <span className={"material-symbols-outlined bento__icon"}>
+                inventory_2
+              </span>
+              <h5 className={"label-md bento__heading"}>
+                Bulk Orders
+              </h5>
+              <p className={"bento__desc bento__desc--sm"}>
+                Scalable production for massive global distributions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Applications Visual List */}
+      <section className={"section section--padded bg-dark"}>
+        <div className={"container apps__grid"}>
+          <div>
+            <h2 className={"headline-lg apps__title"}>
+              Applications &amp; Markets
+            </h2>
+            <ul className={"apps__list"}>
+              <li className={"apps__item"}>
+                <span className={"headline-md apps__num"}>
+                  01
+                </span>
+                <span className={"headline-md apps__name"}>
+                  Traditional Card Games
+                </span>
+              </li>
+              <li className={"apps__item"}>
+                <span className={"headline-md apps__num"}>
+                  02
+                </span>
+                <span className={"headline-md apps__name"}>
+                  Poker &amp; Casinos
+                </span>
+              </li>
+              <li className={"apps__item"}>
+                <span className={"headline-md apps__num"}>
+                  03
+                </span>
+                <span className={"headline-md apps__name"}>
+                  Brand Promotions
+                </span>
+              </li>
+              <li className={"apps__item"}>
+                <span className={"headline-md apps__num"}>
+                  04
+                </span>
+                <span className={"headline-md apps__name"}>
+                  Corporate Gifts
+                </span>
+              </li>
+              <li className={"apps__item"}>
+                <span className={"headline-md apps__num"}>
+                  05
+                </span>
+                <span className={"headline-md apps__name"}>
+                  Events &amp; Souvenirs
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div className={"apps__media magnus-panel"}>
+            <img alt={"Adobe Premium Playing Cards — A India Print House"} src={"/img/adobe-cards-Photoroom-centred.avif"} />
+            <div className={"apps__media-ring"}></div>
+          </div>
+        </div>
+      </section>
+      {/* Customized Playing Cards Detail */}
+      <section className={"section section--padded bg-surface"}>
+        <div className={"container custom"}>
+          <h2 className={"headline-lg custom__title"} data-split="">
+            Customized Playing Cards
+          </h2>
+          <p className={"body-lg custom__quote"}>
+            "We specialize in custom playing cards printed with company logos, promotional messages, and unique artwork. Whether for marketing campaigns or exclusive casino use, our personalization services are designed to make your vision unforgettable."
+          </p>
+          <div className={"custom__sig"}>
+            <div className={"custom__sig-rule"}></div>
+            <span className={"label-md custom__sig-label"}>
+              Signature Series
+            </span>
+          </div>
+        </div>
+      </section>
+      {/* Why Us & Benefits Section */}
+      <section className={"section section--padded bg-cream"}>
+        <div className={"container why__grid"}>
+          <div className={"why__quote"}>
+            <blockquote className={"headline-lg"}>
+              "The Details in Every Card Reflect the Standard of Every Deck."
+            </blockquote>
+          </div>
+          <div className={"why__benefits"}>
+            <div className={"why__benefits-grid"}>
+              <div>
+                <h6 className={"label-md benefit__title"} data-scroll="" data-scroll-class={"is-inview"}>
+                  Edge Precision
+                </h6>
+                <p className={"benefit__desc"}>
+                  Laser-guided cutting ensures each card is perfectly square — no rough edges, no variance across the entire deck.
+                </p>
+              </div>
+              <div>
+                <h6 className={"label-md benefit__title"} data-scroll="" data-scroll-class={"is-inview"}>
+                  Linen-Emboss Texture
+                </h6>
+                <p className={"benefit__desc"}>
+                  A subtle linen finish adds tactile elegance — cards feel premium the moment they're held and never clump in humid conditions.
+                </p>
+              </div>
+              <div>
+                <h6 className={"label-md benefit__title"} data-scroll="" data-scroll-class={"is-inview"}>
+                  Air-Cushion Coating
+                </h6>
+                <p className={"benefit__desc"}>
+                  Our exclusive micro-embossed surface traps microscopic air pockets, giving every card that signature casino-grade glide.
+                </p>
+              </div>
+              <div>
+                <h6 className={"label-md benefit__title"} data-scroll="" data-scroll-class={"is-inview"}>
+                  Built to Last
+                </h6>
+                <p className={"benefit__desc"}>
+                  Reinforced core stock resists bending, warping, and moisture — maintaining pristine condition through thousands of shuffles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Final CTA Section */}
+      <section className={"section bg-dark cta"}>
+        <canvas id={"cta-granim"}></canvas>
+        <div className={"container section--padded"}>
+          <h2 className={"display-lg cta__title"}>
+            Bring Your Deck to Life
+          </h2>
+          <div className={"cta__contacts"}>
+            <div className={"cta__contact"}>
+              <span className={"material-symbols-outlined"}>
+                mail
+              </span>
+              <a className={"headline-md"} href={"mailto:marketingaiph7@gmail.com"}>
+                marketingaiph7@gmail.com
+              </a>
+            </div>
+            <div className={"cta__contact"}>
+              <span className={"material-symbols-outlined"}>
+                call
+              </span>
+              <a className={"headline-md"} href={"tel:+919810614016"}>
+                +91 9810614016
+              </a>
+            </div>
+          </div>
+          <button className={"btn-gold"}>
+            Start Project Now
+          </button>
+        </div>
+      </section>
+      {/* FOOTER (matched to index.html) */}
+      <footer id={"site-footer"}>
+        <div className={"footer-suits-mq"}>
+          <div className={"fsm-track"}>
+            <span>
+              ♠
+            </span>
+            <span className={"r"}>
+              ♥
+            </span>
+            <span>
+              ♣
+            </span>
+            <span className={"r"}>
+              ♦
+            </span>
+            <span>
+              ♠
+            </span>
+            <span className={"r"}>
+              ♥
+            </span>
+            <span>
+              ♣
+            </span>
+            <span className={"r"}>
+              ♦
+            </span>
+            <span>
+              ♠
+            </span>
+            <span className={"r"}>
+              ♥
+            </span>
+            <span>
+              ♣
+            </span>
+            <span className={"r"}>
+              ♦
+            </span>
+            <span>
+              ♠
+            </span>
+            <span className={"r"}>
+              ♥
+            </span>
+            <span>
+              ♣
+            </span>
+            <span className={"r"}>
+              ♦
+            </span>
+            <span>
+              ♠
+            </span>
+            <span className={"r"}>
+              ♥
+            </span>
+            <span>
+              ♣
+            </span>
+            <span className={"r"}>
+              ♦
+            </span>
+            <span>
+              ♠
+            </span>
+            <span className={"r"}>
+              ♥
+            </span>
+            <span>
+              ♣
+            </span>
+            <span className={"r"}>
+              ♦
+            </span>
+            <span>
+              ♠
+            </span>
+            <span className={"r"}>
+              ♥
+            </span>
+            <span>
+              ♣
+            </span>
+            <span className={"r"}>
+              ♦
+            </span>
+            <span>
+              ♠
+            </span>
+            <span className={"r"}>
+              ♥
+            </span>
+            <span>
+              ♣
+            </span>
+            <span className={"r"}>
+              ♦
+            </span>
+          </div>
+        </div>
+        <div className={"footer-big-name"}>
+          <div className={"fbn-track"}>
+            <span className={"fbn-inner"}>
+              A India Print House &nbsp;·&nbsp; A India Print House &nbsp;·&nbsp; A India Print House &nbsp;·&nbsp;
+            </span>
+            <span className={"fbn-inner"}>
+              A India Print House &nbsp;·&nbsp; A India Print House &nbsp;·&nbsp; A India Print House &nbsp;·&nbsp;
+            </span>
+          </div>
+        </div>
+        <div className={"footer-body container"}>
+          <div className={"footer-top"}>
+            <div className={"ft-brand-col"}>
+              <div className={"ft-logo"}>
+                <img src={"/img/aiph-logo.avif"} alt={"AIPH"} className={"ft-logo-img"} />
+                AIPH
+              </div>
+              <p>
+                India's premium playing card manufacturer. Crafting excellence, one card at a time.
+              </p>
+            </div>
+            <div className={"ft-links-cols"}>
+              <div className={"ftl-col"}>
+                <h4>
+                  Products
+                </h4>
+                <ul>
+                  <li>
+                    <a href={"#"}>
+                      Playing Cards
+                    </a>
+                  </li>
+                  <li>
+                    <a href={"#"}>
+                      Promotional Cards
+                    </a>
+                  </li>
+                  <li>
+                    <a href={"#"}>
+                      Corporate Playing Cards
+                    </a>
+                  </li>
+                  <li>
+                    <a href={"#"}>
+                      Educational &amp; Flash Cards
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className={"ftl-col"}>
+                <h4>
+                  Company
+                </h4>
+                <ul>
+                  <li>
+                    <Link href={"/about-us"}>
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <a href={"#"}>
+                      Why Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href={"#"}>
+                      Testimonials
+                    </a>
+                  </li>
+                  <li>
+                    <a href={"#"}>
+                      Contact us
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className={"ftl-col"}>
+                <h4>
+                  Reach Us
+                </h4>
+                <ul>
+                  <li>
+                    <a href={"mailto:marketingaiph7@gmail.com"}>
+                      marketingaiph7@gmail.com
+                    </a>
+                  </li>
+                  <li>
+                    <a href={"tel:+91-9810614016"}>
+                      +91-9810614016
+                    </a>
+                  </li>
+                  <li>
+                    <a href={"tel:+91-9711145467"}>
+                      +91-9711145467
+                    </a>
+                  </li>
+                  <li>
+                    <span>
+                      A-10/2 Mayapuri Industrial Area,
+                      <br />
+                      Phase 1, New Delhi 110064
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className={"footer-bottom"}>
+            <p>
+              Designed And Managed By Promopact Marketing India Pvt. Ltd. All Rights Reserved.
+            </p>
+            <div className={"fb-suits"}>
+              ♠ ♥ ♦ ♣
+            </div>
+          </div>
+        </div>
+      </footer>
+      {/* Navbar behavior + all animations are handled by assets/animations.js */}
+      {/* FLOATING SOCIAL ICONS (matched to index.html) */}
+      <div className={"floating-social-group"}>
+        <a href={"https://wa.me/919810614016"} target={"_blank"} rel={"noopener noreferrer"} className={"fsi-btn fsi-whatsapp"} aria-label={"WhatsApp"}>
+          <svg viewBox={"0 0 24 24"} fill={"currentColor"}>
+            <path d={"M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.37 5.054L2 22l5.077-1.33a9.929 9.929 0 004.93 1.302c5.506 0 9.99-4.478 9.99-9.984C22.007 6.478 17.519 2 12.012 2zm6.09 14.122c-.25.703-1.455 1.285-1.996 1.353-.497.062-1.15.115-3.328-.785-2.784-1.15-4.57-3.98-4.71-4.167-.139-.187-1.135-1.507-1.135-2.877 0-1.37.712-2.042.966-2.316.254-.275.556-.343.74-.343.185 0 .37.004.532.012.169.008.397-.064.62.469.23.55.787 1.916.855 2.053.067.137.112.298.02.482-.09.183-.135.297-.27.457-.134.159-.283.356-.404.477-.135.136-.277.284-.12.553.157.27.7 1.151 1.502 1.866.802.714 1.477.935 1.684 1.026.208.09.33.076.452-.064.122-.14.523-.609.664-.817.14-.207.28-.175.472-.104.193.07 1.22.576 1.43.682.208.106.347.16.398.248.05.088.05.511-.2 1.122z"}></path>
+          </svg>
+          <span className={"fsi-tooltip"}>
+            WhatsApp
+          </span>
+        </a>
+        <a href={"tel:+919810614016"} className={"fsi-btn fsi-call"} aria-label={"Call Us"}>
+          <svg viewBox={"0 0 24 24"} fill={"currentColor"}>
+            <path d={"M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"}></path>
+          </svg>
+          <span className={"fsi-tooltip"}>
+            Call Us
+          </span>
+        </a>
+        <a href={"mailto:marketingaiph7@gmail.com"} className={"fsi-btn fsi-email"} aria-label={"Email Us"}>
+          <svg viewBox={"0 0 24 24"} fill={"currentColor"}>
+            <path d={"M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"}></path>
+          </svg>
+          <span className={"fsi-tooltip"}>
+            Email Us
+          </span>
+        </a>
+        <a href={"https://instagram.com"} target={"_blank"} rel={"noopener noreferrer"} className={"fsi-btn fsi-instagram"} aria-label={"Instagram"}>
+          <svg viewBox={"0 0 24 24"} fill={"currentColor"}>
+            <path d={"M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"}></path>
+          </svg>
+          <span className={"fsi-tooltip"}>
+            Instagram
+          </span>
+        </a>
+        <a href={"https://facebook.com"} target={"_blank"} rel={"noopener noreferrer"} className={"fsi-btn fsi-facebook"} aria-label={"Facebook"}>
+          <svg viewBox={"0 0 24 24"} fill={"currentColor"}>
+            <path d={"M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"}></path>
+          </svg>
+          <span className={"fsi-tooltip"}>
+            Facebook
+          </span>
+        </a>
+      </div>
+      {/* All animations run from the shared module */}
+    </div>
+  );
+}

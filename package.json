@@ -1,0 +1,19 @@
+{
+  "name": "a-india-print-house",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "verify": "node scripts/verify-fidelity.mjs",
+    "smoke": "node scripts/smoke-test.mjs",
+    "reconvert": "node scripts/html-to-jsx.mjs && node scripts/emit-pages.mjs"
+  },
+  "dependencies": {
+    "next": "^16.2.12",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  }
+}

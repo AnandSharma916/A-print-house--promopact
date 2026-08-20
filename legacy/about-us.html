@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | A India Print House — 76+ Years of Playing Card Craftsmanship</title>
+<meta name="description" content="The story of A India Print House — a 4th-generation, 76+ year old playing card manufacturer in New Delhi. Our heritage, mission, vision, craft, and the people behind every bespoke deck."/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+/* ============================================================
+   A India Print House — About Us
+   Vanilla CSS (shared design system with the product pages)
+   ============================================================ */
+
+/* ---- Design Tokens ---- */
+:root {
+    --suit-red: #D22B2B;
+    --foil-gold: #C02125; /* was #C5A059 gold — now signature red */
+    --ink-black: #111111;
+    --paper-cream: #ffffff; /* was #F5F5DC — cool white (cards / "why" section) to match home page */
+    --surface: #f8f9fa;     /* was #fbfbe2 — cool light-grey section tint (the home page's "purple-ish" white) */
+    --on-surface-variant: #444748;
+    --gold-faint: rgba(192, 33, 37, 0.3);
+
+    --margin-desktop: 80px;
+    --gutter: 24px;
+    --section-gap: 120px;
+    --maxw: 1440px;
+
+    --font-serif: 'EB Garamond', serif;
+    --font-sans: 'DM Sans', sans-serif;
+
+    /* ---- Tokens shared with index.html navbar & footer ---- */
+    --gold: #c02125;          /* signature crimson */
+    --gold-lt: #e03e3f;
+    --ivory: #111111;         /* deep charcoal text */
+    --ivory-dim: rgba(17, 17, 17, 0.65);
+    --idx-dark: #f8f9fa;      /* footer light bg */
+    --idx-serif: 'Cormorant Garamond', Georgia, serif;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --r-btn: 100px;
+}
+
+/* ---- Reset & Base ---- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-black);
+    background-color: var(--surface);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+::selection {
+    background: var(--foil-gold);
+    color: var(--ink-black);
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    line-height: 1;
+}
+
+/* ---- Layout Helpers ---- */
+.container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin-inline: auto;
+}
+
+.section {
+    padding-block: var(--section-gap);
+}
+
+.section--padded {
+    padding-inline: var(--margin-desktop);
+}
+
+.bg-surface { background-color: var(--surface); }
+.bg-cream   { background-color: var(--paper-cream); }
+.bg-dark    { background-color: var(--ink-black); color: var(--paper-cream); }
+
+/* Applications & Markets section — scaled to 85% (15% smaller: margin, padding, width, height, content) */
+.section.section--padded.bg-dark {
+    zoom: 0.85;
+}
+
+/* ---- Typography ---- */
+.display-lg {
+    font-family: var(--font-serif);
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+}
+
+.headline-lg {
+    font-family: var(--font-serif);
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.headline-md {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.body-lg {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.body-md {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.label-md {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.label-sm {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.eyebrow {
+    display: inline-block; /* hug text so Rough Notation underline fits the words */
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--foil-gold);
+    margin-bottom: 16px;
+}
+
+/* ============================================================
+   HEADER / NAV  (matched to index.html)
+   ============================================================ */
+#site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    padding: 0 40px;
+    background: #000;
+    border-bottom: 1px solid rgba(255, 36, 48, 0.15);
+    transition: background .4s, box-shadow .4s, border-color .4s;
+}
+
+#site-header.scrolled {
+    background: #08080a;
+    border-bottom: 1px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(255, 36, 48, 0.18);
+}
+
+.hdr-wrap {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.hdr-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.hdr-logo-img {
+    height: 72px;
+    width: 72px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 3px;
+    background: radial-gradient(circle at 30% 30%, rgba(224, 62, 63, .28), rgba(8, 8, 10, .65));
+    border: 1.5px solid var(--gold);
+    box-shadow: 0 0 0 3px rgba(192, 33, 37, .12), 0 4px 14px rgba(192, 33, 37, .35);
+    transition: transform .45s var(--ease-out), box-shadow .45s var(--ease-out);
+}
+
+.hdr-logo:hover .hdr-logo-img {
+    transform: scale(1.08) rotate(-4deg);
+    box-shadow: 0 0 0 4px rgba(192, 33, 37, .22), 0 6px 22px rgba(224, 62, 63, .5);
+}
+
+.hdr-logo-text {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+    white-space: nowrap;
+    padding-left: 14px;
+    border-left: 1px solid rgba(255, 255, 255, .14);
+}
+
+
+
+
+.hlt-main {
+    display: block;
+    font-family: var(--idx-serif);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .015em;
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+}
+
+
+
+.hlt-sub {
+    display: block;
+    font-family: var(--idx-serif);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .015em;
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+}
+
+
+
+
+
+
+.hdr-nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    margin: 0 auto;
+}
+
+.hdr-link {
+    font-size: 13px;
+    letter-spacing: .08em;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color .3s;
+}
+
+.hdr-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .35s var(--ease-out);
+}
+
+.hdr-link:hover {
+    color: var(--gold);
+}
+
+.hdr-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.hdr-btn {
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    padding: 11px 26px;
+    border-radius: var(--r-btn);
+    border: 1px solid var(--gold);
+    background: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color: #fff;
+    transition: color .3s, box-shadow .35s var(--ease-out), transform .35s var(--ease-out);
+}
+
+.hdr-btn span { position: relative; z-index: 2; }
+
+.hdr-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, .5) 50%, transparent 100%);
+    transform: skewX(-20deg);
+    transition: left .65s var(--ease-out);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hdr-btn-glow {
+    position: absolute;
+    inset: 0;
+    background: var(--gold-dk);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .4s var(--ease-out);
+    z-index: 0;
+}
+
+.hdr-btn:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px var(--gold-glow, rgba(192, 33, 37, 0.18)), 0 2px 6px rgba(0, 0, 0, .25);
+}
+
+.hdr-btn:hover::before { left: 150%; }
+
+.hdr-btn:active { transform: translateY(-1px); }
+
+.hdr-btn:hover .hdr-btn-glow {
+    transform: scaleX(1);
+}
+
+.hdr-burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    margin-left: 24px;
+    padding: 8px;
+}
+
+.burger-bar {
+    width: 24px;
+    height: 1.5px;
+    background: #ffffff;
+    transition: transform .3s, opacity .3s;
+}
+
+.hdr-burger.open .b1 {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.hdr-burger.open .b2 {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Fullscreen Nav Overlay */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 890;
+    pointer-events: none;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.nav-overlay.open {
+    pointer-events: all;
+    visibility: visible;
+}
+
+.no-bg-panel {
+    position: absolute;
+    inset: 0;
+    background: var(--idx-dark);
+    transform: translateX(100%);
+    transition: transform .7s var(--ease-out);
+}
+
+.nav-overlay.open .no-bg-panel {
+    transform: translateX(0);
+}
+
+.no-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    padding: 120px 80px 60px;
+    gap: 80px;
+}
+
+.no-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.no-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--idx-serif);
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 500;
+    color: var(--ivory);
+    line-height: 1.1;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: color .3s;
+}
+
+.nav-overlay.open .no-link {
+    animation: link-in .6s var(--ease-out) forwards;
+}
+
+.nav-overlay.open .no-link:nth-child(1) { animation-delay: .2s; }
+.nav-overlay.open .no-link:nth-child(2) { animation-delay: .28s; }
+.nav-overlay.open .no-link:nth-child(3) { animation-delay: .36s; }
+.nav-overlay.open .no-link:nth-child(4) { animation-delay: .44s; }
+.nav-overlay.open .no-link:nth-child(5) { animation-delay: .52s; }
+
+@keyframes link-in {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.no-link:hover {
+    color: var(--gold);
+}
+
+.no-idx {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    letter-spacing: .1em;
+    color: var(--gold);
+    font-style: normal;
+}
+
+.no-side {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+.no-suits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    font-family: var(--idx-serif);
+    font-size: 40px;
+    opacity: .15;
+}
+
+.no-suits-grid .r { color: var(--gold); }
+
+.no-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--ivory-dim);
+}
+
+.no-close {
+    position: absolute;
+    top: 32px;
+    right: 48px;
+    font-size: 22px;
+    color: var(--ivory-dim);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color .2s, transform .2s;
+}
+
+.no-close:hover {
+    color: var(--gold);
+    transform: rotate(90deg);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 17, 17, 0.35);
+    backdrop-filter: brightness(0.85);
+}
+
+.hero__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--ink-black), transparent 60%);
+}
+
+.hero__content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding-inline: 24px;
+    max-width: 1024px;
+    margin-inline: auto;
+    margin-top: 64px;
+}
+
+.hero__eyebrow {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--foil-gold);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.hero__title {
+    font-family: var(--font-serif);
+    font-size: 84px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--paper-cream);
+    margin-bottom: 32px;
+}
+
+.hero__title em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero__text {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 672px;
+    margin-inline: auto;
+    margin-bottom: 40px;
+}
+
+.btn-cream {
+    background: var(--paper-cream);
+    color: var(--ink-black);
+    padding: 20px 48px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease;
+}
+
+.btn-cream:hover {
+    background: var(--foil-gold);
+}
+
+.hero__scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero__scroll span {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.hero__scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(192, 33, 37, 0.6), transparent);
+}
+
+/* ============================================================
+   HERITAGE / INTRO
+   ============================================================ */
+.heritage__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+    align-items: center;
+}
+
+.heritage__text {
+    grid-column: span 5;
+}
+
+.heritage__media {
+    grid-column: 7 / span 6;
+    position: relative;
+}
+
+.heritage__title {
+    color: var(--ink-black);
+    margin-bottom: 32px;
+}
+
+.heritage__p {
+    color: var(--on-surface-variant);
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.heritage__p--last {
+    margin-bottom: 40px;
+}
+
+.discover {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.discover__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    border: 1px solid var(--foil-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.discover:hover .discover__icon {
+    background: var(--foil-gold);
+    color: var(--ink-black);
+}
+
+.discover__label {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.media-frame {
+    aspect-ratio: 0.9;
+    width: 72%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.media-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.media-frame__ring {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 0 1px rgba(192, 33, 37, 0.2);
+}
+
+.badge {
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 160px;
+    height: 160px;
+}
+
+.badge__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge__svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    animation: badge-spin 18s linear infinite;
+}
+
+@keyframes badge-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .badge__svg { animation: none; }
+}
+
+.badge__svg text {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    fill: var(--foil-gold);
+}
+
+.badge__core {
+    width: 64px;
+    height: 64px;
+    background: var(--ink-black);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge__core .material-symbols-outlined {
+    color: var(--foil-gold);
+    font-variation-settings: 'FILL' 1;
+}
+
+/* ============================================================
+   DURABLE & ATTRACTIVE
+   ============================================================ */
+.section-head {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-head__rule {
+    width: 96px;
+    height: 1px;
+    background: var(--foil-gold);
+    margin: 0 auto 32px;
+    opacity: 0.5;
+}
+
+.section-head__text {
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 672px;
+    margin-inline: auto;
+}
+
+.durable__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+}
+
+.deck-card {
+    position: relative;
+    aspect-ratio: 1.14;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    background: radial-gradient(circle at 50% 33%, #4a3654 0%, #382843 58%, #251a2e 100%);
+}
+
+.deck-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.deck-card__caption {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(17, 17, 17, 0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 32px;
+}
+
+.deck-card__kicker {
+    color: var(--foil-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.deck-card__title {
+    margin-top: 8px;
+}
+
+/* ============================================================
+   PRODUCT FEATURES / BENTO GRID
+   ============================================================ */
+.specs__head {
+    margin-bottom: 64px;
+}
+
+.specs__kicker {
+    margin-bottom: 8px;
+}
+
+.specs__title {
+    color: var(--ink-black);
+}
+
+.bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.bento__cell {
+    background: var(--paper-cream);
+    padding: 32px;
+    border: 1px solid var(--gold-faint);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.bento__cell:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.bento__cell--feature {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bento__cell--feature:hover {
+    box-shadow: none;
+    border-color: var(--foil-gold);
+}
+
+.bento__icon {
+    color: var(--foil-gold);
+    font-size: 30px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.bento__icon--lg {
+    font-size: 36px;
+    margin-bottom: 24px;
+}
+
+.bento__heading {
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.bento__feature-title {
+    color: var(--ink-black);
+    margin-bottom: 16px;
+}
+
+.bento__desc {
+    color: var(--on-surface-variant);
+}
+
+.bento__desc--sm {
+    font-size: 14px;
+}
+
+.bento__meta {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--gold-faint);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bento__meta-label {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--on-surface-variant);
+}
+
+/* ============================================================
+   APPLICATIONS & MARKETS
+   ============================================================ */
+.apps__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    align-items: center;
+}
+
+.apps__title {
+    margin-bottom: 48px;
+}
+
+.apps__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.apps__item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
+}
+
+.apps__num {
+    color: var(--foil-gold);
+}
+
+.apps__name {
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.apps__media {
+    position: relative;
+    height: 600px;
+}
+
+.apps__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+
+.apps__media-ring {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 0 1px rgba(192, 33, 37, 0.3);
+}
+
+/* ============================================================
+   CUSTOMIZED CARDS
+   ============================================================ */
+.custom {
+    max-width: 896px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.custom__icon {
+    font-size: 60px;
+    color: var(--foil-gold);
+    margin-bottom: 32px;
+}
+
+.custom__title {
+    color: var(--ink-black);
+    font-style: italic;
+    margin-bottom: 32px;
+}
+
+.custom__quote {
+    color: var(--on-surface-variant);
+    line-height: 1.7;
+    margin-bottom: 48px;
+}
+
+.custom__sig {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom__sig-rule {
+    width: 128px;
+    height: 1px;
+    background: var(--foil-gold);
+    margin-bottom: 16px;
+}
+
+.custom__sig-label {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+/* ============================================================
+   WHY US
+   ============================================================ */
+.why__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+    align-items: center;
+}
+
+.why__quote {
+    grid-column: span 4;
+}
+
+.why__quote blockquote {
+    color: var(--ink-black);
+    line-height: 1.2;
+    border-left: 4px solid var(--foil-gold);
+    padding: 16px 0 16px 32px;
+    margin-bottom: 32px;
+}
+
+.why__benefits {
+    grid-column: 6 / span 7;
+}
+
+.why__benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 48px;
+    row-gap: 40px;
+}
+
+.benefit__title {
+    text-transform: uppercase;
+    color: var(--foil-gold);
+    margin-bottom: 12px;
+}
+
+.benefit__desc {
+    font-size: 14px;
+    color: var(--on-surface-variant);
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.cta {
+    text-align: center;
+    overflow: hidden;
+}
+
+.cta__title {
+    margin-bottom: 40px;
+}
+
+.cta__contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+.cta__contact {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cta__contact .material-symbols-outlined {
+    color: var(--foil-gold);
+}
+
+.cta__contact a {
+    transition: color 0.3s ease;
+}
+
+.cta__contact a:hover {
+    color: var(--foil-gold);
+}
+
+.btn-gold {
+    background: var(--foil-gold);
+    color: var(--ink-black);
+    padding: 24px 64px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.btn-gold:hover {
+    background: var(--paper-cream);
+}
+
+/* ============================================================
+   FOOTER  (matched to index.html)
+   ============================================================ */
+#site-footer {
+    background: var(--idx-dark);
+    color: var(--ivory);
+    border-top: 1px solid rgba(192, 33, 37, .08);
+    overflow: hidden;
+    padding-top: 60px;
+}
+
+.footer-suits-mq {
+    overflow: hidden;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(192, 33, 37, .06);
+}
+
+.fsm-track {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: mq-scroll 20s linear infinite;
+}
+
+.fsm-track span {
+    font-family: var(--idx-serif);
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.fsm-track span.r { color: var(--gold); }
+
+.footer-big-name {
+    overflow: hidden;
+    border-bottom: 1px solid rgba(192, 33, 37, .06);
+    display: flex;
+}
+
+.fbn-track {
+    display: flex;
+    width: max-content;
+    animation: mq-scroll 25s linear infinite;
+}
+
+.fbn-inner {
+    font-family: var(--idx-serif);
+    font-size: clamp(60px, 9vw, 140px);
+    font-weight: 300;
+    letter-spacing: -.02em;
+    white-space: nowrap;
+    padding: 0 40px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.footer-body {
+    padding: 60px 40px 40px;
+}
+
+.footer-top {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.ft-brand-col {
+    flex: 0 0 280px;
+}
+
+.ft-logo {
+    font-family: var(--idx-serif);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--ivory);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ft-logo-img {
+    height: 55.296px;
+    width: 55.296px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1px solid rgba(192, 33, 37, 0.15);
+    padding: 2px;
+}
+
+.ft-brand-col p {
+    font-size: 13px;
+    color: var(--ivory-dim);
+    line-height: 1.7;
+}
+
+.ft-links-cols {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.ftl-col h4 {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.ftl-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ftl-col li a,
+.ftl-col li span {
+    font-size: 13px;
+    color: var(--ivory-dim);
+    transition: color .2s;
+}
+
+.ftl-col li a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 28px;
+    border-top: 1px solid rgba(192, 33, 37, .08);
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: rgba(17, 12, 1, 0.55);
+}
+
+.fb-suits {
+    font-family: var(--idx-serif);
+    font-size: 20px;
+    color: rgba(192, 33, 37, .2);
+    letter-spacing: .2em;
+}
+
+@keyframes mq-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+    .hdr-nav,
+    .hdr-btn {
+        display: none;
+    }
+
+    .hdr-burger {
+        display: flex;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .ft-brand-col {
+        flex: unset;
+    }
+
+    .ft-links-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .no-content {
+        flex-direction: column;
+        padding: 80px 40px 40px;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-gap: 80px;
+        --margin-desktop: 24px;
+    }
+
+    .section--padded {
+        padding-inline: 24px;
+    }
+
+    .display-lg { font-size: 40px; }
+    .headline-lg { font-size: 32px; }
+    .hero__title { font-size: 44px; }
+
+    .heritage__grid,
+    .apps__grid,
+    .why__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .heritage__text,
+    .heritage__media,
+    .apps__media,
+    .why__quote,
+    .why__benefits {
+        grid-column: auto;
+    }
+
+    .badge { display: none; }
+
+    .durable__grid,
+    .bento,
+    .why__benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento__cell--feature {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .apps__media { display: none; }
+
+    .cta__contacts {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    #site-header {
+        padding: 0 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .ft-links-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   FLOATING SOCIAL ICONS  (matched to index.html)
+   ============================================================ */
+.floating-social-group {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: all;
+}
+
+.fsi-btn {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(192, 33, 37, 0.15);
+    color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.fsi-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fsi-btn:hover {
+    transform: scale(1.15) translateY(-2px);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.fsi-btn:hover svg {
+    transform: scale(1.1) rotate(8deg);
+}
+
+.fsi-whatsapp:hover {
+    background: #25d366;
+    box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+}
+
+.fsi-call:hover {
+    background: #c02125;
+    box-shadow: 0 10px 24px rgba(192, 33, 37, 0.35);
+}
+
+.fsi-email:hover {
+    background: #ea4335;
+    box-shadow: 0 10px 24px rgba(234, 67, 53, 0.35);
+}
+
+.fsi-instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 10px 24px rgba(220, 39, 67, 0.35);
+}
+
+.fsi-facebook:hover {
+    background: #1877f2;
+    box-shadow: 0 10px 24px rgba(24, 119, 242, 0.35);
+}
+
+.fsi-tooltip {
+    position: absolute;
+    right: 60px;
+    background: #111111;
+    color: #ffffff;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fsi-btn:hover .fsi-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .floating-social-group {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+
+    .fsi-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .fsi-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .fsi-tooltip {
+        display: none;
+    }
+}
+
+/* ============================================================
+   EXTRA ANIMATION FLOURISHES
+   ============================================================ */
+
+/* Scroll progress bar (top of page) */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--foil-gold);
+    transform: scaleX(0);
+    transform-origin: left center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Attention pulse on the primary CTA button */
+@keyframes cta-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(192, 33, 37, 0.45); }
+    50%      { box-shadow: 0 0 0 16px rgba(192, 33, 37, 0); }
+}
+.btn-gold {
+    animation: cta-pulse 2.6s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-gold { animation: none; }
+}
+
+/* ============================================================
+   HOVER FLOURISHES (pure CSS — transform / shadow / colour only)
+   Touch devices don't fire :hover, so mobile is unaffected.
+   ============================================================ */
+
+/* Buttons: lift + diagonal sheen sweep */
+.btn-cream,
+.btn-gold {
+    position: relative;
+    overflow: hidden;
+}
+.btn-cream {
+    transition: background-color .3s ease, color .3s ease,
+                transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s ease;
+}
+.btn-gold {
+    transition: background-color .3s ease, color .3s ease,
+                transform .35s cubic-bezier(.16, 1, .3, 1);
+}
+.btn-cream:hover,
+.btn-gold:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+.btn-cream:hover {
+    color: #fff;
+    box-shadow: 0 14px 26px -10px rgba(192, 33, 37, .5);
+}
+.btn-cream::before,
+.btn-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .55), transparent);
+    transform: skewX(-20deg);
+    transition: left .6s ease;
+    pointer-events: none;
+}
+.btn-cream:hover::before,
+.btn-gold:hover::before {
+    left: 150%;
+}
+
+/* Bento cells: lift + red border + icon kick */
+.bento__cell {
+    transition: transform .4s cubic-bezier(.16, 1, .3, 1), box-shadow .3s ease, border-color .3s ease;
+}
+.bento__cell:hover {
+    transform: translateY(-6px);
+    border-color: var(--foil-gold);
+}
+.bento__icon {
+    transition: transform .4s cubic-bezier(.16, 1, .3, 1), color .3s ease;
+}
+.bento__cell:hover .bento__icon {
+    transform: scale(1.18) rotate(-6deg);
+}
+
+/* Deck cards: lift + caption rise + red inset ring */
+.deck-card {
+    transition: transform .5s cubic-bezier(.16, 1, .3, 1), box-shadow .5s ease;
+}
+.deck-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 26px 44px -18px rgba(0, 0, 0, .55);
+}
+.deck-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px var(--foil-gold);
+    opacity: 0;
+    transition: opacity .4s ease;
+    pointer-events: none;
+}
+.deck-card:hover::after {
+    opacity: 1;
+}
+.deck-card__caption > div {
+    transition: transform .5s cubic-bezier(.16, 1, .3, 1);
+}
+.deck-card:hover .deck-card__caption > div {
+    transform: translateY(-6px);
+}
+
+/* Applications list: number + name slide, divider turns red */
+.apps__item {
+    transition: border-color .3s ease;
+    cursor: pointer;
+}
+.apps__item:hover {
+    border-color: var(--foil-gold);
+}
+.apps__num,
+.apps__name {
+    transition: transform .4s cubic-bezier(.16, 1, .3, 1), color .3s ease;
+}
+.apps__item:hover .apps__num,
+.apps__item:hover .apps__name {
+    transform: translateX(10px);
+}
+.apps__item:hover .apps__name {
+    color: var(--foil-gold);
+}
+
+/* Footer links: subtle slide */
+.ftl-col li a {
+    display: inline-block;
+    transition: color .2s ease, transform .25s ease;
+}
+.ftl-col li a:hover {
+    transform: translateX(5px);
+}
+
+/* Benefit blocks: gentle lift */
+.why__benefits-grid > div {
+    transition: transform .35s cubic-bezier(.16, 1, .3, 1);
+}
+.why__benefits-grid > div:hover {
+    transform: translateY(-5px);
+}
+
+/* Library-specific animation CSS (particles, lottie, atropos, granim,
+   lenis, three.js showcase, locomotive reveals) lives in the shared
+   assets/animations.css so both pages stay identical. */
+
+/* ============================================================
+   ABOUT PAGE — extra sections (stats, team carousel, timeline)
+   ============================================================ */
+
+/* ---- Animated stats strip (home-page style counters) ---- */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1040px;
+    margin: 56px auto 0;
+}
+.about-stat {
+    text-align: center;
+    padding: 28px 16px;
+    border: 1px solid var(--gold-faint);
+    background: var(--paper-cream);
+    transition: transform .4s var(--ease-out), border-color .3s ease, box-shadow .3s ease;
+}
+.about-stat:hover {
+    transform: translateY(-6px);
+    border-color: var(--foil-gold);
+    box-shadow: 0 18px 30px -18px rgba(192, 33, 37, .5);
+}
+.about-stat__num {
+    font-family: var(--font-serif);
+    font-size: 52px;
+    line-height: 1;
+    font-weight: 500;
+    color: var(--foil-gold);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 2px;
+}
+.about-stat__unit { font-size: 28px; }
+.about-stat__label {
+    margin-top: 12px;
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: var(--on-surface-variant);
+    text-transform: uppercase;
+}
+.about-stats-note {
+    max-width: 760px;
+    margin: 40px auto 0;
+    padding-top: 30px;
+    position: relative;
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.55;
+    color: var(--ink-black);
+}
+.about-stats-note::before {
+    content: "\2666";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    color: var(--foil-gold);
+}
+.about-stats-note em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--foil-gold);
+}
+@media (max-width: 768px) {
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    .about-stat__num { font-size: 40px; }
+}
+
+/* ---- Team / values carousel (Swiper, home-page library) ---- */
+.team__head { text-align: center; margin-bottom: 56px; }
+.about-swiper { padding: 8px 4px 56px; overflow: hidden; }
+/* stretch every slide to the tallest card's height so they stay equal */
+.about-swiper .swiper-slide { height: auto; }
+.team-card {
+    background: var(--paper-cream);
+    border: 1px solid var(--gold-faint);
+    padding: 36px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform .45s var(--ease-out), box-shadow .45s ease, border-color .3s ease;
+}
+.team-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--foil-gold);
+    box-shadow: 0 26px 44px -22px rgba(0, 0, 0, .4);
+}
+.team-card__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--ink-black);
+    color: var(--foil-gold);
+    font-family: var(--font-serif);
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gold-faint);
+}
+.team-card__suit { font-size: 22px; color: var(--foil-gold); }
+.team-card h4 { font-family: var(--font-serif); font-size: 22px; color: var(--ink-black); }
+.team-card .team-card__role {
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--foil-gold);
+}
+.team-card p { font-size: 14px; color: var(--on-surface-variant); line-height: 1.7; }
+.about-swiper .swiper-pagination-bullet { background: var(--foil-gold); }
+.about-swiper .swiper-pagination-bullet-active { background: var(--ink-black); }
+
+/* ---- Journey timeline (re-skin of apps list on dark bg) ---- */
+.journey__item .apps__num { min-width: 90px; }
+.journey__year {
+    color: var(--foil-gold);
+    font-family: var(--font-serif);
+}
+
+/* ---- Vintage history photograph (Who We Are / heritage media) ---- */
+.vintage-photo {
+    position: relative;
+    width: 94%;
+    margin-inline: auto;
+}
+.vintage-photo__frame {
+    position: relative;
+    padding: 16px;
+    background: linear-gradient(158deg, #fdfbf4 0%, #f1e8d6 100%);
+    border-radius: 3px;
+    box-shadow: 0 34px 60px -26px rgba(17, 17, 17, .55),
+                inset 0 1px 0 rgba(255, 255, 255, .7);
+}
+/* thin black keyline framing the photo */
+.vintage-photo__frame::before {
+    content: "";
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(17, 17, 17, .6);
+    pointer-events: none;
+    z-index: 2;
+}
+/* faint red corner accents — subtle nod to the brand palette */
+.vintage-photo__frame::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(192, 33, 37, .18);
+    border-radius: 2px;
+    pointer-events: none;
+}
+.vintage-photo__frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: grayscale(1) sepia(.30) contrast(1.05) brightness(.97);
+}
+/* aged paper grain over the photo */
+.vintage-photo__grain {
+    position: absolute;
+    inset: 16px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: .3;
+    background-image: radial-gradient(rgba(17, 17, 17, .55) .5px, transparent .5px);
+    background-size: 3px 3px;
+    mix-blend-mode: multiply;
+}
+.vintage-photo__cap {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    font-family: var(--idx-serif);
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: .01em;
+    color: var(--ink-black);
+}
+.vintage-photo__cap em {
+    font-style: italic;
+    font-weight: 700;
+    color: var(--foil-gold);
+}
+/* decorative suit divider with flanking rules */
+.vpc-suits {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--idx-serif);
+    letter-spacing: .35em;
+    font-size: 16px;
+    color: var(--foil-gold);
+}
+.vpc-suits::before,
+.vpc-suits::after {
+    content: "";
+    width: 46px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--foil-gold));
+}
+.vpc-suits::before {
+    background: linear-gradient(to left, transparent, var(--foil-gold));
+}
+@media (max-width: 768px) {
+    .vintage-photo { width: 100%; transform: none; margin-top: 32px; }
+}
+</style>
+<!-- ===== Shared animation library stack (identical on both pages) ===== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- Particles (tsParticles incl. confetti) + Lottie -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+<!-- Text / annotation -->
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="https://unpkg.com/rough-notation@0.4.0/lib/rough-notation.iife.js"></script>
+<!-- 3D tilt (Atropos) + animated gradient (Granim) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atropos@2.0.2/atropos.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/atropos@2.0.2/atropos.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/granim@2.0.0/dist/granim.min.js"></script>
+<!-- Smooth scroll (Lenis) + reveal detection (Locomotive) -->
+<link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<!-- WebGL cards (Three.js) + micro-interactions (Anime.js) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+<!-- Home-page library stack: Swiper carousel + GSAP CustomEase / MotionPath -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+<!-- Shared animation styles + logic -->
+<link rel="stylesheet" href="assets/animations.css"/>
+  <!-- Favicons -->
+  <link rel="icon" href="img/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+<style>
+/* ===== Uniform product-card style: Sapphire panel + crosshatch + Nested Corner (Ivory) frame =====
+   Same recipe as the deck cards on the product pages and the panels on index.html. */
+.deck-card,
+.apps__media {
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 30% 15%, rgba(255,255,255,0.46) 0%, rgba(255,255,255,0.13) 26%, transparent 50%),
+        linear-gradient(160deg, rgba(255,255,255,0.24) 0%, transparent 34%, transparent 60%, rgba(4,10,34,0.36) 100%),
+        radial-gradient(circle at 50% 42%, #3a63b8 0%, #1c3d82 60%, #0b1f49 100%) !important;
+}
+.deck-card::before,
+.apps__media::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    opacity: .07;
+    background-image:
+        repeating-linear-gradient(45deg, #ffffff 0 1px, transparent 1px 11px),
+        repeating-linear-gradient(-45deg, #ffffff 0 1px, transparent 1px 11px);
+}
+.deck-card > img,
+.apps__media > img {
+    position: relative; z-index: 1;
+    object-fit: contain !important;
+    box-sizing: border-box;
+    background: transparent !important;
+    filter: drop-shadow(0 16px 34px rgba(0,0,0,.45));
+}
+.deck-card > img  { padding: 15%; }
+.apps__media > img { padding: 9% 12%; }
+.deck-card > .deck-frame,
+.apps__media > .apps__media-ring {
+    position: absolute; inset: 9px; z-index: 2; pointer-events: none;
+    box-shadow: none;
+    border: 24px solid transparent;
+    border-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20200%20200%27%20fill%3D%27none%27%20stroke%3D%27%23efe9df%27%20stroke-width%3D%272.2%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cg%3E%3Cpath%20d%3D%27M12%2060%20L12%2012%20L60%2012%27%20stroke-width%3D%272%27%2F%3E%3Cpath%20d%3D%27M20%2060%20L20%2020%20L60%2020%27%20stroke-width%3D%271.2%27%2F%3E%3Cpath%20d%3D%27M28%2060%20L28%2028%20L60%2028%27%20stroke-width%3D%270.7%27%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%27translate(200%2C0)%20scale(-1%2C1)%27%3E%3Cpath%20d%3D%27M12%2060%20L12%2012%20L60%2012%27%20stroke-width%3D%272%27%2F%3E%3Cpath%20d%3D%27M20%2060%20L20%2020%20L60%2020%27%20stroke-width%3D%271.2%27%2F%3E%3Cpath%20d%3D%27M28%2060%20L28%2028%20L60%2028%27%20stroke-width%3D%270.7%27%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%27translate(0%2C200)%20scale(1%2C-1)%27%3E%3Cpath%20d%3D%27M12%2060%20L12%2012%20L60%2012%27%20stroke-width%3D%272%27%2F%3E%3Cpath%20d%3D%27M20%2060%20L20%2020%20L60%2020%27%20stroke-width%3D%271.2%27%2F%3E%3Cpath%20d%3D%27M28%2060%20L28%2028%20L60%2028%27%20stroke-width%3D%270.7%27%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%27translate(200%2C200)%20scale(-1%2C-1)%27%3E%3Cpath%20d%3D%27M12%2060%20L12%2012%20L60%2012%27%20stroke-width%3D%272%27%2F%3E%3Cpath%20d%3D%27M20%2060%20L20%2020%20L60%2020%27%20stroke-width%3D%271.2%27%2F%3E%3Cpath%20d%3D%27M28%2060%20L28%2028%20L60%2028%27%20stroke-width%3D%270.7%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 62 stretch;
+}
+.deck-card .deck-card__caption { z-index: 3; background: linear-gradient(to top, rgba(17,17,17,.72), transparent 46%); }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR (matched to index.html) -->
+<header id="site-header">
+<div class="hdr-wrap">
+<a href="index.html" class="hdr-logo">
+<img src="img/aiph-logo.avif" alt="AIPH" class="hdr-logo-img"/>
+<div class="hdr-logo-text">
+<span class="hlt-main">A India</span>
+<span class="hlt-sub">Print House</span>
+</div>
+</a>
+<nav class="hdr-nav">
+<a href="index.html" class="hdr-link">Home</a>
+<div class="hdr-dropdown">
+<a href="#" class="hdr-link">Collection <span class="hdr-caret">▾</span></a>
+<div class="hdr-menu">
+<a href="premium-playing-cards.html" class="hdr-menu-link">Premium Playing Cards</a>
+<a href="promotional-playing-cards.html" class="hdr-menu-link">Promotional Playing Cards</a>
+<a href="advertisement-playing-cards.html" class="hdr-menu-link">Advertisement Playing Cards</a>
+<a href="card-games.html" class="hdr-menu-link">Card Games</a>
+<a href="corporate-playing-cards.html" class="hdr-menu-link">Corporate Playing Cards</a>
+<a href="souvenir-playing-cards.html" class="hdr-menu-link">Customised Playing Cards</a>
+<a href="branded-playing-cards.html" class="hdr-menu-link">Branded Playing Cards</a>
+<a href="poker-cards.html" class="hdr-menu-link">Poker Cards</a>
+<a href="educational-cards.html" class="hdr-menu-link">Educational Cards</a>
+<a href="flash-cards.html" class="hdr-menu-link">Flash Cards</a>
+</div>
+</div>
+<a href="about-us.html" class="hdr-link" style="color: var(--gold);">About Us</a>
+<a href="contact-us.html" class="hdr-link">Contact us</a>
+</nav>
+<a href="#" class="hdr-btn magnetic"><span>Bespoke Order</span>
+<div class="hdr-btn-glow"></div>
+</a>
+<button class="hdr-burger" id="hdr-burger" aria-label="Open menu">
+<div class="burger-bar b1"></div>
+<div class="burger-bar b2"></div>
+</button>
+</div>
+</header>
+
+<!-- FULLSCREEN NAV -->
+<div class="nav-overlay" id="nav-overlay">
+<div class="no-bg-panel"></div>
+<div class="no-content">
+<div class="no-links">
+<a href="index.html" class="no-link"><em class="no-idx">01</em><span>Home</span></a>
+<div class="no-link no-collection-group">
+<div class="no-collection-head"><em class="no-idx">02</em><span>Collection</span></div>
+<div class="no-collection-links">
+<a href="premium-playing-cards.html" class="no-col-link">Premium Playing Cards</a>
+<a href="promotional-playing-cards.html" class="no-col-link">Promotional Playing Cards</a>
+<a href="advertisement-playing-cards.html" class="no-col-link">Advertisement Playing Cards</a>
+<a href="card-games.html" class="no-col-link">Card Games</a>
+<a href="corporate-playing-cards.html" class="no-col-link">Corporate Playing Cards</a>
+<a href="souvenir-playing-cards.html" class="no-col-link">Customised Playing Cards</a>
+<a href="branded-playing-cards.html" class="no-col-link">Branded Playing Cards</a>
+<a href="poker-cards.html" class="no-col-link">Poker Cards</a>
+<a href="educational-cards.html" class="no-col-link">Educational Cards</a>
+<a href="flash-cards.html" class="no-col-link">Flash Cards</a>
+</div>
+</div>
+<a href="about-us.html" class="no-link"><em class="no-idx">03</em><span>About Us</span></a>
+<a href="#about-why" class="no-link"><em class="no-idx">04</em><span>Why Us</span></a>
+<a href="contact-us.html" class="no-link"><em class="no-idx">05</em><span>Contact Us</span></a>
+</div>
+<div class="no-side">
+<div class="no-suits-grid"><span>♠</span><span class="r">♥</span><span>♣</span><span class="r">♦</span></div>
+<div class="no-contact-info">
+<p>marketingaiph7@gmail.com</p>
+<p>+91-9810614016</p>
+<p>New Delhi, India</p>
+</div>
+</div>
+</div>
+<button class="no-close" id="no-close">✕</button>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+<div class="hero__bg">
+<img alt="A India Print House — About Us" src="img/slider-bg-2.avif"/>
+<div class="hero__overlay"></div>
+<div class="hero__gradient"></div>
+</div>
+<div id="hero-particles"></div>
+<div class="hero__content">
+<span class="hero__eyebrow">OUR STORY</span>
+<h1 class="hero__title">Crafting Stories,<br/><em>One Card at a Time</em></h1>
+<p class="hero__text">For over seven decades, A India Print House has turned ink, paper, and imagination into playing cards that brands, families, and collectors treasure. This is who we are.</p>
+<div>
+<a href="#about-team"><button class="btn-cream magnetic">Meet The Makers</button></a>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="hero__scroll">
+<span>Scroll</span>
+<div class="hero__scroll-line"></div>
+</div>
+</section>
+
+<!-- Introduction Section (Heritage / Who We Are) -->
+<section class="section section--padded bg-surface">
+<div class="container heritage__grid">
+<div class="heritage__text">
+<span class="eyebrow">Who We Are</span>
+<h2 class="headline-lg heritage__title" data-split>A Family Press, Four Generations Strong</h2>
+<p class="body-md heritage__p">
+                A India Print House is a trusted manufacturer and supplier of premium playing cards, promotional decks, corporate cards, educational and flash cards, and bespoke card games. From our home in New Delhi, we serve businesses, casinos, and brands across India and overseas.
+            </p>
+<p class="body-md heritage__p heritage__p--last">
+                What began as a humble family press has grown into a fourth-generation studio that marries old-world tactile craft with modern offset precision — so every deck that leaves our house is a small masterpiece.
+            </p>
+<div class="discover">
+<div class="discover__icon">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+<span class="label-md discover__label">Read our journey</span>
+</div>
+</div>
+<div class="heritage__media">
+<figure class="vintage-photo">
+<div class="vintage-photo__frame no-parallax">
+<img alt="India House Playing Card Manufacturers, Sadar Bazar, Delhi — Est. 1951" src="img/Our-History.avif"/>
+<div class="vintage-photo__grain"></div>
+</div>
+<figcaption class="vintage-photo__cap"><span class="vpc-suits">♠ ♥ ♣ ♦</span>India House · Sadar Bazar, Delhi — <em>Est. 1951</em></figcaption>
+</figure>
+</div>
+</div>
+<!-- Animated stats (home-page style counters) -->
+<div class="container about-stats">
+<div class="about-stat">
+<div class="about-stat__num"><span data-count="76">0</span><span class="about-stat__unit">+</span></div>
+<div class="about-stat__label">Years of<br/>Craftsmanship</div>
+</div>
+<div class="about-stat">
+<div class="about-stat__num"><span data-count="1000">0</span><span class="about-stat__unit">+</span></div>
+<div class="about-stat__label">Bespoke<br/>Projects</div>
+</div>
+<div class="about-stat">
+<div class="about-stat__num"><span data-count="100">0</span><span class="about-stat__unit">%</span></div>
+<div class="about-stat__label">Client<br/>Satisfaction</div>
+</div>
+<div class="about-stat">
+<div class="about-stat__num"><span data-count="4">0</span><span class="about-stat__unit">th</span></div>
+<div class="about-stat__label">Generation<br/>Family Press</div>
+</div>
+</div>
+<p class="about-stats-note">Seven decades of experience, built on <em>trust&nbsp;and&nbsp;quality.</em></p>
+</section>
+
+<!-- The Craft Section (Atropos 3D tilt cards) -->
+<section class="section bg-dark">
+<div class="container section--padded">
+<div class="section-head">
+<h2 class="headline-lg" data-split>The Hands Behind Every Deck</h2>
+<div class="section-head__rule" data-scroll data-scroll-class="is-inview"></div>
+<p class="body-lg section-head__text">
+                Skilled craftspeople, premium linen-finish stocks, and advanced UV printing — every card is checked, coated, and cut with obsessive care before it ever reaches your table.
+            </p>
+</div>
+<div class="durable__grid">
+<div class="atropos deck-atropos">
+<div class="atropos-scale">
+<div class="atropos-rotate">
+<div class="atropos-inner">
+<div class="deck-card"><div class="deck-frame" aria-hidden="true"></div>
+<img alt="Craftsmanship — premium decks" src="img/playing-1.avif"/>
+<div class="deck-card__caption">
+<div>
+<span class="label-sm deck-card__kicker">Built to Last</span>
+<h3 class="headline-md deck-card__title">Smooth Handling &amp; Snap</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="atropos deck-atropos">
+<div class="atropos-scale">
+<div class="atropos-rotate">
+<div class="atropos-inner">
+<div class="deck-card"><div class="deck-frame" aria-hidden="true"></div>
+<img alt="Drink Up — custom card game packaging" src="img/drink-up.avif" class="no-parallax" style="padding: 12%;"/>
+<div class="deck-card__caption">
+<div>
+<span class="label-sm deck-card__kicker">Designed In-House</span>
+<h3 class="headline-md deck-card__title">Custom Art &amp; Packaging</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3D Card Showcase (Three.js) -->
+<section class="card-showcase" id="card-showcase">
+<div class="card-showcase__content container section--padded">
+<span class="eyebrow">In Every Suit</span>
+<h2 class="display-lg card-showcase__title">Heritage Built Into Our DNA</h2>
+<p class="card-showcase__text">Spades, hearts, clubs, diamonds — four suits, four generations. The same family hands that printed our first deck still guide every press that runs today.</p>
+</div>
+</section>
+
+<!-- What We Stand For (Bento Grid: Mission / Vision / Values) -->
+<section class="section section--padded bg-surface">
+<div class="container">
+<div class="specs__head">
+<span class="eyebrow specs__kicker">What We Stand For</span>
+<h2 class="headline-lg specs__title" data-split>Our Mission, Vision &amp; Values</h2>
+</div>
+<div class="bento">
+<!-- Large Feature: Mission -->
+<div class="bento__cell bento__cell--feature">
+<div>
+<span class="material-symbols-outlined bento__icon bento__icon--lg">flag</span>
+<h4 class="headline-md bento__feature-title">Our Mission</h4>
+<p class="body-md bento__desc">To deliver innovative, high-quality printing solutions that help businesses, educators, and organisations achieve their goals — products that are visually striking, durable, and genuinely value-driven.</p>
+</div>
+<div class="bento__meta">
+<span class="label-sm bento__meta-label">Quality is our standard</span>
+<span class="material-symbols-outlined" style="color: var(--foil-gold);">check_circle</span>
+</div>
+</div>
+<!-- Small Features: Values -->
+<div class="bento__cell">
+<span class="material-symbols-outlined bento__icon">visibility</span>
+<h5 class="label-md bento__heading">Our Vision</h5>
+<p class="bento__desc bento__desc--sm">To be India's most trusted maker of customised card products at home and overseas.</p>
+</div>
+<div class="bento__cell">
+<span class="material-symbols-outlined bento__icon">workspace_premium</span>
+<h5 class="label-md bento__heading">Uncompromising Quality</h5>
+<p class="bento__desc bento__desc--sm">Premium stocks, protective coatings, and a finish that exceeds expectations.</p>
+</div>
+<div class="bento__cell">
+<span class="material-symbols-outlined bento__icon">handshake</span>
+<h5 class="label-md bento__heading">Customer-First</h5>
+<p class="bento__desc bento__desc--sm">We work closely with every client until the final product matches their vision.</p>
+</div>
+<div class="bento__cell">
+<span class="material-symbols-outlined bento__icon">lightbulb</span>
+<h5 class="label-md bento__heading">Innovation</h5>
+<p class="bento__desc bento__desc--sm">Continuous improvement in design, materials, and printing technology.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Our Journey (timeline, re-skin of apps list) -->
+<section class="section section--padded bg-dark">
+<div class="container apps__grid">
+<div>
+<h2 class="headline-lg apps__title">Our Journey</h2>
+<ul class="apps__list">
+<li class="apps__item journey__item">
+<span class="headline-md apps__num journey__year">1951</span>
+<span class="headline-md apps__name">A family press is founded in New Delhi</span>
+</li>
+<li class="apps__item journey__item">
+<span class="headline-md apps__num journey__year">1980s</span>
+<span class="headline-md apps__name">Specialising in playing &amp; educational cards</span>
+</li>
+<li class="apps__item journey__item">
+<span class="headline-md apps__num journey__year">2000s</span>
+<span class="headline-md apps__name">Modern offset &amp; UV printing adopted</span>
+</li>
+<li class="apps__item journey__item">
+<span class="headline-md apps__num journey__year">2010s</span>
+<span class="headline-md apps__name">Branded decks for national &amp; global brands</span>
+</li>
+<li class="apps__item journey__item">
+<span class="headline-md apps__num journey__year">Today</span>
+<span class="headline-md apps__name">4th generation, 1000+ bespoke projects</span>
+</li>
+</ul>
+</div>
+<div class="apps__media">
+<img alt="A India Print House journey" src="img/playing-2-centred.avif"/>
+<div class="apps__media-ring"></div>
+</div>
+</div>
+</section>
+
+<!-- The People Behind the Press (Swiper carousel — home-page library) -->
+<section class="section section--padded bg-cream" id="about-team">
+<div class="team__head">
+<span class="eyebrow">The People Behind the Press</span>
+<h2 class="headline-lg" data-split>Hands, Hearts &amp; Suits</h2>
+</div>
+<div class="swiper about-swiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<div class="team-card">
+<div class="team-card__avatar">♠</div>
+<span class="team-card__suit">♠</span>
+<h4>The Founding Generation</h4>
+<span class="team-card__role">Heritage &amp; Legacy</span>
+<p>The family that started it all — setting the standard of quality and care we still hold to every single day.</p>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="team-card">
+<div class="team-card__avatar">♥</div>
+<span class="team-card__suit">♥</span>
+<h4>Design Studio</h4>
+<span class="team-card__role">Art &amp; Customisation</span>
+<p>Our designers turn brand briefs, logos, and ideas into finished card faces, backs, and packaging.</p>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="team-card">
+<div class="team-card__avatar">♣</div>
+<span class="team-card__suit">♣</span>
+<h4>Press &amp; Production</h4>
+<span class="team-card__role">Printing &amp; Finishing</span>
+<p>The hands at the machines — calibrating colour, coating, cutting, and inspecting every run.</p>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="team-card">
+<div class="team-card__avatar">♦</div>
+<span class="team-card__suit">♦</span>
+<h4>Client Partners</h4>
+<span class="team-card__role">Service &amp; Delivery</span>
+<p>For over four decades, many of our clients have continued to place their trust in us, proof that quality and consistency build lasting partnerships.</p>
+</div>
+</div>
+</div>
+<div class="swiper-pagination about-pager"></div>
+</div>
+</section>
+
+<!-- Promise / Signature (Lottie accent + Rough Notation box) -->
+<section class="section section--padded bg-surface">
+<div class="container custom">
+<h2 class="headline-lg custom__title" data-split>More Than a Printer</h2>
+<p class="body-lg custom__quote">
+            "We don't just print cards — we create products that help brands connect, promote, and grow. From the first idea to the finished deck, every order carries our family's name and our promise of quality."
+        </p>
+<div class="custom__sig">
+<div class="custom__sig-rule"></div>
+<span class="label-md custom__sig-label">A India Print House</span>
+</div>
+</div>
+</section>
+
+<!-- Our Promise / Why Us & Benefits Section -->
+<section class="section section--padded bg-cream" id="about-why">
+<div class="container why__grid">
+<div class="why__quote">
+<blockquote class="headline-lg">
+                "Quality is not just our promise; it is our standard."
+            </blockquote>
+</div>
+<div class="why__benefits">
+<div class="why__benefits-grid">
+<div>
+<h6 class="label-md benefit__title" data-scroll data-scroll-class="is-inview">Premium Quality</h6>
+<p class="benefit__desc">Advanced printing and expert craftsmanship that meets the highest international standards.</p>
+</div>
+<div>
+<h6 class="label-md benefit__title" data-scroll data-scroll-class="is-inview">Fully Customised</h6>
+<p class="benefit__desc">Bespoke designs, sizes, and packaging tailored to your brand and purpose.</p>
+</div>
+<div>
+<h6 class="label-md benefit__title" data-scroll data-scroll-class="is-inview">Honest Pricing</h6>
+<p class="benefit__desc">High-value, cost-effective printing optimised for every budget and bulk order.</p>
+</div>
+<div>
+<h6 class="label-md benefit__title" data-scroll data-scroll-class="is-inview">On-Time Delivery</h6>
+<p class="benefit__desc">A streamlined, fast production workflow that respects your deadlines.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Final CTA Section (Granim gradient + confetti) -->
+<section class="section bg-dark cta">
+<canvas id="cta-granim"></canvas>
+<div class="container section--padded">
+<h2 class="display-lg cta__title">Let's Build Something Memorable</h2>
+<div class="cta__contacts">
+<div class="cta__contact">
+<span class="material-symbols-outlined">mail</span>
+<a class="headline-md" href="mailto:marketingaiph7@gmail.com">marketingaiph7@gmail.com</a>
+</div>
+<div class="cta__contact">
+<span class="material-symbols-outlined">call</span>
+<a class="headline-md" href="tel:+919810614016">+91 9810614016</a>
+</div>
+</div>
+<button class="btn-gold magnetic">Start Your Project</button>
+</div>
+</section>
+
+<!-- FOOTER (matched to index.html) -->
+<footer id="site-footer">
+<div class="footer-suits-mq">
+<div class="fsm-track">
+<span>♠</span><span class="r">♥</span><span>♣</span><span class="r">♦</span>
+<span>♠</span><span class="r">♥</span><span>♣</span><span class="r">♦</span>
+<span>♠</span><span class="r">♥</span><span>♣</span><span class="r">♦</span>
+<span>♠</span><span class="r">♥</span><span>♣</span><span class="r">♦</span>
+<span>♠</span><span class="r">♥</span><span>♣</span><span class="r">♦</span>
+<span>♠</span><span class="r">♥</span><span>♣</span><span class="r">♦</span>
+<span>♠</span><span class="r">♥</span><span>♣</span><span class="r">♦</span>
+<span>♠</span><span class="r">♥</span><span>♣</span><span class="r">♦</span>
+</div>
+</div>
+<div class="footer-big-name">
+<div class="fbn-track">
+<span class="fbn-inner">A India Print House &nbsp;·&nbsp; A India Print House &nbsp;·&nbsp; A India Print House
+          &nbsp;·&nbsp;</span>
+<span class="fbn-inner">A India Print House &nbsp;·&nbsp; A India Print House &nbsp;·&nbsp; A India Print House
+          &nbsp;·&nbsp;</span>
+</div>
+</div>
+<div class="footer-body container">
+<div class="footer-top">
+<div class="ft-brand-col">
+<div class="ft-logo"><img src="img/aiph-logo.avif" alt="AIPH" class="ft-logo-img"/> AIPH</div>
+<p>India's premium playing card manufacturer. Crafting excellence, one card at a time.</p>
+</div>
+<div class="ft-links-cols">
+<div class="ftl-col">
+<h4>Products</h4>
+<ul>
+<li><a href="premium-playing-cards.html">Premium Playing Cards</a></li>
+<li><a href="promotional-playing-cards.html">Promotional Cards</a></li>
+<li><a href="corporate-playing-cards.html">Corporate Playing Cards</a></li>
+<li><a href="card-games.html">Card Games</a></li>
+</ul>
+</div>
+<div class="ftl-col">
+<h4>Company</h4>
+<ul>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="#about-why">Why Us</a></li>
+<li><a href="index.html#testimonials">Testimonials</a></li>
+<li><a href="index.html#contact">Contact us</a></li>
+</ul>
+</div>
+<div class="ftl-col">
+<h4>Reach Us</h4>
+<ul>
+<li><a href="mailto:marketingaiph7@gmail.com">marketingaiph7@gmail.com</a></li>
+<li><a href="tel:+91-9810614016">+91-9810614016</a></li>
+<li><a href="tel:+91-9711145467">+91-9711145467</a></li>
+<li><span>A-10/2 Mayapuri Industrial Area,<br/>Phase 1, New Delhi 110064</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>Designed And Managed By Promopact Marketing India Pvt. Ltd. All Rights Reserved.</p>
+<div class="fb-suits">♠ ♥ ♦ ♣</div>
+</div>
+</div>
+</footer>
+
+<!-- Navbar behavior + all animations are handled by assets/animations.js -->
+
+<!-- FLOATING SOCIAL ICONS (matched to index.html) -->
+<div class="floating-social-group">
+<a href="https://wa.me/919810614016" target="_blank" rel="noopener noreferrer" class="fsi-btn fsi-whatsapp" aria-label="WhatsApp">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.37 5.054L2 22l5.077-1.33a9.929 9.929 0 004.93 1.302c5.506 0 9.99-4.478 9.99-9.984C22.007 6.478 17.519 2 12.012 2zm6.09 14.122c-.25.703-1.455 1.285-1.996 1.353-.497.062-1.15.115-3.328-.785-2.784-1.15-4.57-3.98-4.71-4.167-.139-.187-1.135-1.507-1.135-2.877 0-1.37.712-2.042.966-2.316.254-.275.556-.343.74-.343.185 0 .37.004.532.012.169.008.397-.064.62.469.23.55.787 1.916.855 2.053.067.137.112.298.02.482-.09.183-.135.297-.27.457-.134.159-.283.356-.404.477-.135.136-.277.284-.12.553.157.27.7 1.151 1.502 1.866.802.714 1.477.935 1.684 1.026.208.09.33.076.452-.064.122-.14.523-.609.664-.817.14-.207.28-.175.472-.104.193.07 1.22.576 1.43.682.208.106.347.16.398.248.05.088.05.511-.2 1.122z"/>
+</svg>
+<span class="fsi-tooltip">WhatsApp</span>
+</a>
+<a href="tel:+919810614016" class="fsi-btn fsi-call" aria-label="Call Us">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+</svg>
+<span class="fsi-tooltip">Call Us</span>
+</a>
+<a href="mailto:marketingaiph7@gmail.com" class="fsi-btn fsi-email" aria-label="Email Us">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+</svg>
+<span class="fsi-tooltip">Email Us</span>
+</a>
+<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="fsi-btn fsi-instagram" aria-label="Instagram">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+</svg>
+<span class="fsi-tooltip">Instagram</span>
+</a>
+<a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="fsi-btn fsi-facebook" aria-label="Facebook">
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+</svg>
+<span class="fsi-tooltip">Facebook</span>
+</a>
+</div>
+
+<!-- All shared animations run from the shared module -->
+<script src="assets/animations.js"></script>
+
+<!-- About-page extras: Swiper carousel + animated stat counters
+     (Swiper, GSAP CustomEase & ScrollTrigger — the home-page stack) -->
+<script>
+(function () {
+  'use strict';
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.addEventListener('DOMContentLoaded', function () {
+
+    /* ---- Swiper: "The People Behind the Press" carousel ---- */
+    if (typeof Swiper === 'function' && document.querySelector('.about-swiper')) {
+      new Swiper('.about-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        grabCursor: true,
+        loop: true,
+        speed: 800,
+        autoplay: REDUCED ? false : { delay: 3200, disableOnInteraction: false },
+        pagination: { el: '.about-pager', clickable: true },
+        breakpoints: {
+          640: { slidesPerView: 1.4 },
+          900: { slidesPerView: 2.2 },
+          1200: { slidesPerView: 3 }
+        }
+      });
+    }
+
+    /* ---- Animated number counters (home-page style) ---- */
+    var counters = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+    if (!counters.length) return;
+
+    var EASE = function (t) { return 1 - Math.pow(1 - t, 3); }; /* easeOutCubic */
+    if (window.gsap && window.CustomEase) {
+      try {
+        gsap.registerPlugin(CustomEase);
+        CustomEase.create('countEase', '0.16, 1, 0.3, 1');
+      } catch (e) { /* fall back to JS easing below */ }
+    }
+
+    function runCount(el) {
+      if (el.__done) return;
+      el.__done = true;
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      if (REDUCED) { el.textContent = target.toLocaleString(); return; }
+      var dur = 1600, start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        el.textContent = Math.round(target * EASE(p)).toLocaleString();
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { runCount(en.target); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(function (el) { io.observe(el); });
+    } else {
+      counters.forEach(runCount);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
