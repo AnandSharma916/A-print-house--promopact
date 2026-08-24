@@ -9,7 +9,10 @@
     "lint": "next lint",
     "verify": "node scripts/verify-fidelity.mjs",
     "smoke": "node scripts/smoke-test.mjs",
-    "reconvert": "node scripts/html-to-jsx.mjs && node scripts/emit-pages.mjs"
+    "reconvert": "node scripts/html-to-jsx.mjs && node scripts/emit-pages.mjs",
+    "verify:locations": "node scripts/verify-locations.mjs",
+    "build:content": "node scripts/build-location-content.mjs",
+    "verify:content": "node scripts/check-content-against-doc.mjs"
   },
   "dependencies": {
     "next": "^16.2.12",

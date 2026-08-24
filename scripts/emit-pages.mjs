@@ -5,12 +5,34 @@
  * how legacy/*.html became app/**; the emitted files are the source of truth
  * once written, so re-running this overwrites hand edits on purpose.
  */
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const manifest = JSON.parse(readFileSync(join(ROOT, '.conversion', 'manifest.json'), 'utf8'));
+
+/*
+ * STOP — this script is now destructive.
+ *
+ * The routes it writes are full page files. Since the Locations work the
+ * master routes are thin wrappers around components/templates/**, and the
+ * markup lives there; re-emitting would overwrite those wrappers with
+ * standalone pages, and every /[location] route would silently fall out of
+ * step with the master it is supposed to mirror.
+ *
+ * Rebuilding from legacy/ means: run this, then re-run
+ * scripts/build-templates.mjs and scripts/emit-master-routes.mjs to put the
+ * templates and wrappers back. Pass --i-know to proceed.
+ */
+if (!process.argv.includes('--i-know') && existsSync(join(ROOT, 'components', 'templates'))) {
+  console.error(
+    'Refusing to run: components/templates exists, so app/**/page.jsx are wrappers.\n' +
+      'See the note at the top of this file; pass --i-know to override.'
+  );
+  process.exit(1);
+}
+
 
 /* index.html and contact-us.html ran script.js; everything else ran
    assets/animations.js. See lib/vendors.js. */

@@ -7,3 +7,12 @@ build/
 *.tsbuildinfo
 next-env.d.ts
 .conversion/
+
+# Locations build inputs — pristine master pages and the metadata lifted from
+# them. Regenerated from git history; the emitted templates and
+# data/master-metadata.js are the source of truth. See scripts/build-templates.mjs.
+.templates-src/
+components/templates/.metadata/
+
+# Files moved aside rather than deleted (see .backup/*/README or git log).
+.backup/

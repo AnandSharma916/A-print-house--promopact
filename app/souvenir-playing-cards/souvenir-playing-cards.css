@@ -888,7 +888,7 @@ button {
 }
 
 .ft-brand-col p { font-size: 13px; color: var(--ivory-dim); line-height: 1.7; }
-.ft-links-cols { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.ft-links-cols { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
 .ftl-col h4 { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
 .ftl-col ul { display: flex; flex-direction: column; gap: 10px; }
 .ftl-col li a, .ftl-col li span { font-size: 13px; color: var(--ivory-dim); transition: color .2s; }

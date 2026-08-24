@@ -236,3 +236,81 @@
     align-items: flex-start;
     gap: 0;
 }
+/* ════════════════════════════════════════════════════════════════
+   LOCATION PRODUCT SECTIONS
+
+   The Manufacturer / Supplier / Exporter / Wholesaler blocks a location
+   product page renders under its introduction section.
+
+   They reuse the introduction section's own lockup — .heritage__grid,
+   .heritage__text, .heritage__media, .media-frame — so type, colour, the
+   ornate frame, the split-heading animation and the 768px collapse all
+   come from the page stylesheet rather than from anything new here. What
+   is left is only what that lockup cannot express: the mirrored row, and
+   a frame that fits pictures which were cropped for other containers.
+
+   Shared by every location. There is no per-location styling. */
+
+/* Mirrored row: text right, picture left. Both children are pinned to the
+   same grid row so swapping their columns does not push one below the
+   other; DOM order stays text-then-picture, which is also the order the
+   collapsed layout wants. */
+.page-root .loc-role--flip .heritage__text {
+    grid-column: 8 / span 5;
+    grid-row: 1;
+}
+
+.page-root .loc-role--flip .heritage__media {
+    grid-column: 1 / span 6;
+    grid-row: 1;
+}
+
+.page-root .loc-role--flip .media-frame {
+    margin-left: auto;
+}
+
+.page-root .loc-role .eyebrow {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.page-root .loc-role .heritage__title {
+    margin-bottom: 24px;
+}
+
+.page-root .loc-role .heritage__p:last-child {
+    margin-bottom: 0;
+}
+
+/* Contain rather than crop. These four pictures belong to other containers
+   on this page — portrait product shots in one, landscape deck renders in
+   another — and .media-frame's own `object-fit: cover` at aspect-ratio .9
+   would slice the decks in half. A wider frame and a contained image show
+   every picture whole, with the section colour reading as the mount. */
+.page-root .loc-role .media-frame {
+    aspect-ratio: 1.15;
+    width: 88%;
+}
+
+.page-root .loc-role .media-frame img {
+    object-fit: contain;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+/* The page stylesheet collapses .heritage__grid to one column at 768px and
+   resets both children to `grid-column: auto`. The mirrored rules above are
+   more specific than that reset, so they have to stand down explicitly. */
+@media (max-width: 768px) {
+    .page-root .loc-role--flip .heritage__text,
+    .page-root .loc-role--flip .heritage__media {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .page-root .loc-role .media-frame,
+    .page-root .loc-role--flip .media-frame {
+        width: 100%;
+        margin-left: 0;
+    }
+}
