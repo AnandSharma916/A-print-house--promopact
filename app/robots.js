@@ -20,11 +20,11 @@ export default function robots() {
       },
       {
         userAgent: 'GPTBot',
-        disallow: ['/'],  // block AI scrapers from crawling
+        allow: ['/'],
       },
       {
         userAgent: 'CCBot',
-        disallow: ['/'],  // block Common Crawl AI training bot
+        allow: ['/'],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
