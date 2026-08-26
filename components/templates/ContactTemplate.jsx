@@ -10,6 +10,7 @@ import Link from 'next/link';
 import LegacyEngine from '@/components/LegacyEngine';
 import EnquiryMailto from '@/components/EnquiryMailto';
 import '@/app/contact-us/contact-us.css';
+import ScrollPopupForm from '@/components/ScrollPopupForm';
 import { path } from '@/lib/locations';
 
 
@@ -17,6 +18,7 @@ export default function ContactTemplate({ location = null }) {
   return (
     <div className="page-root">
       <LegacyEngine variant="home" />
+      <ScrollPopupForm />
       <EnquiryMailto />
       {/* GRAIN */}
       <div className={"grain-overlay"} aria-hidden={"true"}></div>

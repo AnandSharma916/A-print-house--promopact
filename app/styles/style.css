@@ -4351,3 +4351,330 @@ button {
     --sf-h: min(200px, 26vh);
   }
 }
+
+/* ══════════════════════════════════════════════
+   SCROLL POPUP FORM (ScrollPopupForm.jsx)
+══════════════════════════════════════════════ */
+
+/* Backdrop */
+.spf-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+  animation: spfFadeIn 0.25s ease;
+}
+
+@keyframes spfFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Trigger pill button */
+.spf-trigger {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--red, #c02125);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--ff-sans, sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(192,33,37,0.45);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1),
+              opacity 0.45s cubic-bezier(0.16,1,0.3,1),
+              background 0.3s;
+}
+
+.spf-trigger--show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.spf-trigger:hover {
+  background: #a81b1f;
+  box-shadow: 0 12px 32px rgba(192,33,37,0.55);
+}
+
+.spf-trigger-label {
+  white-space: nowrap;
+}
+
+/* Panel wrapper (positions the card) */
+.spf-panel {
+  position: fixed;
+  bottom: 90px;
+  left: 30px;
+  z-index: 9999;
+}
+
+/* Card */
+.spf-card {
+  width: min(380px, calc(100vw - 60px));
+  background: #0f0f11;
+  border: 1px solid rgba(192,33,37,0.25);
+  border-radius: 20px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+  overflow: hidden;
+  transform: translateY(20px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1),
+              opacity 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.spf-panel--open .spf-card {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Card header */
+.spf-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 22px 24px 16px;
+  background: linear-gradient(135deg, rgba(192,33,37,0.18) 0%, rgba(0,0,0,0) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.spf-card-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold, #c9a84c);
+  margin-bottom: 4px;
+}
+
+.spf-card-title {
+  font-family: var(--ff-serif, serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: #f4f2ef;
+  margin: 0;
+}
+
+.spf-close {
+  background: rgba(255,255,255,0.07);
+  border: none;
+  color: rgba(255,255,255,0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.spf-close:hover {
+  background: rgba(192,33,37,0.3);
+  color: #fff;
+}
+
+/* Form */
+.spf-form {
+  padding: 18px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.spf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.spf-field {
+  margin-bottom: 12px;
+}
+
+.spf-field label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244,242,239,0.5);
+  margin-bottom: 6px;
+}
+
+.spf-field label span {
+  color: var(--red, #c02125);
+}
+
+.spf-field input,
+.spf-field select,
+.spf-field textarea {
+  width: 100%;
+  padding: 10px 13px;
+  font-family: var(--ff-sans, sans-serif);
+  font-size: 13px;
+  color: #f4f2ef;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  box-sizing: border-box;
+}
+
+.spf-field select option {
+  background: #0f0f11;
+  color: #f4f2ef;
+}
+
+.spf-field input:focus,
+.spf-field select:focus,
+.spf-field textarea:focus {
+  border-color: rgba(192,33,37,0.5);
+  box-shadow: 0 0 0 3px rgba(192,33,37,0.12);
+}
+
+.spf-field input::placeholder,
+.spf-field textarea::placeholder {
+  color: rgba(244,242,239,0.25);
+}
+
+.spf-field textarea {
+  resize: none;
+}
+
+/* Actions */
+.spf-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.spf-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: none;
+  font-family: var(--ff-sans, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.spf-btn:hover {
+  transform: translateY(-2px);
+}
+
+.spf-btn--primary {
+  background: var(--red, #c02125);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(192,33,37,0.4);
+}
+
+.spf-btn--primary:hover {
+  box-shadow: 0 8px 24px rgba(192,33,37,0.55);
+}
+
+.spf-btn--whatsapp {
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+}
+
+.spf-btn--whatsapp:hover {
+  box-shadow: 0 8px 24px rgba(37,211,102,0.5);
+}
+
+.spf-btn--email {
+  background: rgba(255,255,255,0.09);
+  color: #f4f2ef;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.spf-btn--email:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Success state */
+.spf-success {
+  padding: 32px 24px 36px;
+  text-align: center;
+  color: #f4f2ef;
+}
+
+.spf-success-icon {
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+}
+
+.spf-success p {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.spf-success-sub {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: rgba(244,242,239,0.55);
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .spf-trigger {
+    bottom: 20px;
+    left: 16px;
+    padding: 11px 16px;
+    font-size: 13px;
+  }
+
+  .spf-panel {
+    bottom: 80px;
+    left: 12px;
+    right: 12px;
+  }
+
+  .spf-card {
+    width: 100%;
+  }
+
+  .spf-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .spf-actions {
+    grid-template-columns: 1fr;
+  }
+}
+

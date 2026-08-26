@@ -10,6 +10,7 @@ import Link from 'next/link';
 import LegacyEngine from '@/components/LegacyEngine';
 import '@/app/promotional-playing-cards/promotional-playing-cards.css';
 import '@/app/styles/inner-page-fixes.css';
+import ScrollPopupForm from '@/components/ScrollPopupForm';
 import { path } from '@/lib/locations';
 import LocationProductSections from '@/components/LocationProductSections';
 
@@ -18,6 +19,7 @@ export default function PromotionalPlayingCardsTemplate({ location = null }) {
   return (
     <div className="page-root">
       <LegacyEngine variant="product" />
+      <ScrollPopupForm />
       {/* NAVBAR */}
       <header id={"site-header"}>
         <div className={"hdr-wrap"}>

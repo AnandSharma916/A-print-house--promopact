@@ -9,6 +9,7 @@
 import Link from 'next/link';
 import LegacyEngine from '@/components/LegacyEngine';
 import HideOnError from '@/components/HideOnError';
+import ScrollPopupForm from '@/components/ScrollPopupForm';
 import { path } from '@/lib/locations';
 
 
@@ -16,6 +17,7 @@ export default function HomeTemplate({ location = null }) {
   return (
     <div className="page-root">
       <LegacyEngine variant="home" />
+      <ScrollPopupForm />
       {/* GRAIN */}
       <div className={"grain-overlay"} aria-hidden={"true"}></div>
       {/* NAVBAR */}

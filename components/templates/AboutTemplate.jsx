@@ -11,6 +11,7 @@ import LegacyEngine from '@/components/LegacyEngine';
 import AboutExtras from '@/components/AboutExtras';
 import '@/app/about-us/about-us.css';
 import '@/app/styles/inner-page-fixes.css';
+import ScrollPopupForm from '@/components/ScrollPopupForm';
 import { path } from '@/lib/locations';
 
 
@@ -18,6 +19,7 @@ export default function AboutTemplate({ location = null }) {
   return (
     <div className="page-root">
       <LegacyEngine variant="product" />
+      <ScrollPopupForm />
       <AboutExtras />
       {/* NAVBAR (matched to index.html) */}
       <header id={"site-header"}>

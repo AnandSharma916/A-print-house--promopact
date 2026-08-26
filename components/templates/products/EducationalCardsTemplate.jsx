@@ -10,12 +10,14 @@ import Link from 'next/link';
 import LegacyEngine from '@/components/LegacyEngine';
 import '@/app/educational-cards/educational-cards.css';
 import '@/app/styles/inner-page-fixes.css';
+import ScrollPopupForm from '@/components/ScrollPopupForm';
 
 
 export default function EducationalCardsTemplate() {
   return (
     <div className="page-root">
       <LegacyEngine variant="product" />
+      <ScrollPopupForm />
       {/* NAVBAR */}
       <header id={"site-header"}>
         <div className={"hdr-wrap"}>

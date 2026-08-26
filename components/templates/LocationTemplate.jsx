@@ -9,6 +9,7 @@
 import Link from 'next/link';
 import LegacyEngine from '@/components/LegacyEngine';
 import EnquiryMailto from '@/components/EnquiryMailto';
+import ScrollPopupForm from '@/components/ScrollPopupForm';
 import '@/app/location/location.css';
 import { LOCATIONS } from '@/data/locations';
 import { path } from '@/lib/locations';
@@ -18,6 +19,7 @@ export default function LocationTemplate({ location = null }) {
   return (
     <div className="page-root">
       <LegacyEngine variant="home" />
+      <ScrollPopupForm />
       <EnquiryMailto />
       {/* GRAIN */}
       <div className={"grain-overlay"} aria-hidden={"true"}></div>
