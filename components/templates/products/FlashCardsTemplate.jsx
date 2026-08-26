@@ -10,7 +10,6 @@ import Link from 'next/link';
 import LegacyEngine from '@/components/LegacyEngine';
 import '@/app/flash-cards/flash-cards.css';
 import '@/app/styles/inner-page-fixes.css';
-import FooterLocations from '@/components/FooterLocations';
 
 
 export default function FlashCardsTemplate() {
@@ -789,6 +788,11 @@ export default function FlashCardsTemplate() {
                       Contact us
                     </a>
                   </li>
+                  <li>
+                    <a href={"/location"}>
+                      Location
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div className={"ftl-col"}>
@@ -820,7 +824,6 @@ export default function FlashCardsTemplate() {
                   </li>
                 </ul>
               </div>
-              <FooterLocations />
             </div>
           </div>
           <div className={"footer-bottom"}>

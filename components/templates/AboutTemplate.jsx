@@ -12,7 +12,6 @@ import AboutExtras from '@/components/AboutExtras';
 import '@/app/about-us/about-us.css';
 import '@/app/styles/inner-page-fixes.css';
 import { path } from '@/lib/locations';
-import FooterLocations from '@/components/FooterLocations';
 
 
 export default function AboutTemplate({ location = null }) {
@@ -935,6 +934,11 @@ export default function AboutTemplate({ location = null }) {
                       Contact us
                     </Link>
                   </li>
+                  <li>
+                    <a href={path("/location", location)}>
+                      Location
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div className={"ftl-col"}>
@@ -966,7 +970,6 @@ export default function AboutTemplate({ location = null }) {
                   </li>
                 </ul>
               </div>
-              <FooterLocations location={location} />
             </div>
           </div>
           <div className={"footer-bottom"}>

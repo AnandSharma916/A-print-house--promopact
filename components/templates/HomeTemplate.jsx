@@ -10,7 +10,6 @@ import Link from 'next/link';
 import LegacyEngine from '@/components/LegacyEngine';
 import HideOnError from '@/components/HideOnError';
 import { path } from '@/lib/locations';
-import FooterLocations from '@/components/FooterLocations';
 
 
 export default function HomeTemplate({ location = null }) {
@@ -2303,6 +2302,11 @@ export default function HomeTemplate({ location = null }) {
                       Contact us
                     </a>
                   </li>
+                  <li>
+                    <a href={path("/location", location)}>
+                      Location
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div className={"ftl-col"}>
@@ -2334,7 +2338,6 @@ export default function HomeTemplate({ location = null }) {
                   </li>
                 </ul>
               </div>
-              <FooterLocations location={location} />
             </div>
           </div>
           <div className={"footer-bottom"}>

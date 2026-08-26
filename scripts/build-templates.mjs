@@ -185,16 +185,12 @@ for (const page of PAGES) {
 
   if (page.masterOnly) {
     src = renameComponent(src, page.name, false);
-    src = injectFooterLocations(src, false);
-    imports.push("import FooterLocations from '@/components/FooterLocations';");
   } else {
     const rewritten = rewriteHrefs(src);
     src = rewritten.src;
     hrefCount = rewritten.count;
     src = renameComponent(src, page.name, true);
-    src = injectFooterLocations(src, true);
     imports.push("import { path } from '@/lib/locations';");
-    imports.push("import FooterLocations from '@/components/FooterLocations';");
     if (page.product) {
       src = injectRoleSections(src, page.product);
       imports.push("import LocationProductSections from '@/components/LocationProductSections';");

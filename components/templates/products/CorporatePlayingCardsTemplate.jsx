@@ -11,7 +11,6 @@ import LegacyEngine from '@/components/LegacyEngine';
 import '@/app/corporate-playing-cards/corporate-playing-cards.css';
 import '@/app/styles/inner-page-fixes.css';
 import { path } from '@/lib/locations';
-import FooterLocations from '@/components/FooterLocations';
 import LocationProductSections from '@/components/LocationProductSections';
 
 
@@ -819,6 +818,11 @@ export default function CorporatePlayingCardsTemplate({ location = null }) {
                       Contact us
                     </a>
                   </li>
+                  <li>
+                    <a href={path("/location", location)}>
+                      Location
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div className={"ftl-col"}>
@@ -850,7 +854,6 @@ export default function CorporatePlayingCardsTemplate({ location = null }) {
                   </li>
                 </ul>
               </div>
-              <FooterLocations location={location} />
             </div>
           </div>
           <div className={"footer-bottom"}>

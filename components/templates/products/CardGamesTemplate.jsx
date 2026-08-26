@@ -11,7 +11,6 @@ import LegacyEngine from '@/components/LegacyEngine';
 import '@/app/card-games/card-games.css';
 import '@/app/styles/inner-page-fixes.css';
 import { path } from '@/lib/locations';
-import FooterLocations from '@/components/FooterLocations';
 import LocationProductSections from '@/components/LocationProductSections';
 
 
@@ -792,6 +791,11 @@ export default function CardGamesTemplate({ location = null }) {
                       Contact us
                     </a>
                   </li>
+                  <li>
+                    <a href={path("/location", location)}>
+                      Location
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div className={"ftl-col"}>
@@ -823,7 +827,6 @@ export default function CardGamesTemplate({ location = null }) {
                   </li>
                 </ul>
               </div>
-              <FooterLocations location={location} />
             </div>
           </div>
           <div className={"footer-bottom"}>
