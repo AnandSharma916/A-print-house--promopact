@@ -1,6 +1,7 @@
 import './styles/style.css';
 import './styles/animations.css';
 import { FONT_STYLESHEETS, VENDOR_STYLESHEETS } from '@/lib/vendors';
+import Script from 'next/script';
 
 export const metadata = {
   metadataBase: new URL('https://aindiaprinthouse.com'),
@@ -15,6 +16,9 @@ export const metadata = {
       { url: '/img/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
     ],
     apple: [{ url: '/img/apple-touch-icon.png', sizes: '180x180' }],
+  },
+  verification: {
+    google: '4BikwGhq2ymnSfqD9Tg3XlO18t3SWOdKQkPl5_uXfI8',
   },
 };
 
@@ -35,7 +39,22 @@ export default function RootLayout({ children }) {
           <link key={href} rel="stylesheet" href={href} />
         ))}
       </head>
-      <body>{children}</body>
+      <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-KL7W1JL8T1"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-KL7W1JL8T1');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
