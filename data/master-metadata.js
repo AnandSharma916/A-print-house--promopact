@@ -28,6 +28,11 @@ export const MASTER_METADATA = {
     keywords: "contact a india print house, playing cards manufacturer contact, custom playing cards enquiry, new delhi playing cards, mayapuri printing",
     alternates: { canonical: "/contact-us" },
   },
+  "/location": {
+    title: "Our Locations | A India Print House — Playing Cards Manufacturer",
+    description: "Explore all regions served by A India Print House. Trusted manufacturer, supplier and exporter of custom playing cards across India, Nepal, and major metropolitan areas.",
+    alternates: { canonical: "/location" },
+  },
   "/premium-playing-cards": {
     title: "ARTISAN PRESS | Premium Playing Cards Manufacturer",
     alternates: { canonical: "/premium-playing-cards" },

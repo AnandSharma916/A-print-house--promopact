@@ -9,5 +9,34 @@ import { MASTER_METADATA } from '@/data/master-metadata';
 export const metadata = MASTER_METADATA["/"];
 
 export default function HomePage() {
-  return <HomeTemplate />;
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "A India Print House",
+      "url": "https://www.aiphplayingcards.in/",
+      "logo": "https://www.aiphplayingcards.in/img/aiph-logo.avif"
+    },
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "A India Print House",
+      "url": "https://www.aiphplayingcards.in/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.aiphplayingcards.in/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <HomeTemplate />
+    </>
+  );
 }

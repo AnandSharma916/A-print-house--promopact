@@ -5,7 +5,7 @@
  */
 
 export default function robots() {
-  const baseUrl = 'https://aindiaprinthouse.com';
+  const baseUrl = 'https://www.aiphplayingcards.in';
 
   return {
     rules: [

@@ -4,7 +4,7 @@ import { FONT_STYLESHEETS, VENDOR_STYLESHEETS } from '@/lib/vendors';
 import Script from 'next/script';
 
 export const metadata = {
-  metadataBase: new URL('https://aindiaprinthouse.com'),
+  metadataBase: new URL('https://www.aiphplayingcards.in'),
   title: {
     default: 'A India Print House — Leading Playing Cards Manufacturer in India',
     template: '%s',

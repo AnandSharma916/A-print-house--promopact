@@ -220,16 +220,26 @@ export default function LocationTemplate({ location = null }) {
         </div>
         <div className={"ch-inner container"}>
           <div className={"ch-eyebrow"}>
-            Global Reach
+            {location ? `${location.name} & Global Reach` : "Global Reach"}
           </div>
           <h1>
-            Our <em>Locations</em>
+            {location ? (
+              <>
+                Playing Cards in <em>{location.name}</em>
+              </>
+            ) : (
+              <>
+                Our <em>Locations</em>
+              </>
+            )}
           </h1>
           <p className={"ch-sub"}>
-            Find A India Print House in a city near you. Select your location below to view customized offerings tailored for your region.
+            {location
+              ? `A India Print House delivers premium playing card manufacturing, supplying, and export services across ${location.name} and global markets. Choose a region below to explore.`
+              : "Find A India Print House in a city near you. Select your location below to view customized offerings tailored for your region."}
           </p>
           <div className={"ch-crumb"}>
-            <Link href={path("/", location)}>Home</Link> &nbsp;·&nbsp; <span>Locations</span>
+            <Link href={path("/", location)}>Home</Link> &nbsp;·&nbsp; <span>{location ? `${location.name} Locations` : "Locations"}</span>
           </div>
         </div>
       </section>
@@ -242,19 +252,27 @@ export default function LocationTemplate({ location = null }) {
             <p>We serve various regions with dedicated manufacturing, supply, and export services for premium playing cards.</p>
           </div>
           <div className={"loc-grid"}>
-            {LOCATIONS.map((loc) => (
-              <Link key={loc.slug} href={`/${loc.slug}`} className={"loc-card"}>
-                <div className={"loc-ico"} aria-hidden={"true"}>
-                  <svg viewBox={"0 0 24 24"} fill={"currentColor"}>
-                    <path d={"M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"}></path>
-                  </svg>
-                </div>
-                <div className={"loc-body"}>
-                  <h4>{loc.name}</h4>
-                  <p>{loc.country}</p>
-                </div>
-              </Link>
-            ))}
+            {LOCATIONS.map((loc) => {
+              const isCurrent = location && location.slug === loc.slug;
+              return (
+                <Link
+                  key={loc.slug}
+                  href={`/${loc.slug}`}
+                  className={`loc-card ${isCurrent ? "active" : ""}`}
+                  {...(isCurrent ? { "aria-current": "page" } : {})}
+                >
+                  <div className={"loc-ico"} aria-hidden={"true"}>
+                    <svg viewBox={"0 0 24 24"} fill={"currentColor"}>
+                      <path d={"M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"}></path>
+                    </svg>
+                  </div>
+                  <div className={"loc-body"}>
+                    <h4>{loc.name}</h4>
+                    <p>{loc.country}</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

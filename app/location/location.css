@@ -150,10 +150,20 @@
   text-decoration: none;
 }
 
-.loc-card:hover {
+.loc-card:hover,
+.loc-card.active {
   transform: translateY(-6px);
-  border-color: rgba(192, 33, 37, 0.4);
-  box-shadow: 0 16px 40px rgba(192, 33, 37, 0.15);
+  border-color: rgba(192, 33, 37, 0.6);
+  box-shadow: 0 16px 40px rgba(192, 33, 37, 0.2);
+}
+
+.loc-card.active .loc-ico {
+  background: rgba(192, 33, 37, 0.35);
+  border-color: rgba(192, 33, 37, 0.6);
+}
+
+.loc-card.active .loc-body h4 {
+  color: var(--gold-lt);
 }
 
 .loc-ico {

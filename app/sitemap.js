@@ -13,7 +13,7 @@
 import { LOCATIONS, PRODUCTS, MASTER_ONLY_PRODUCTS } from '@/data/locations';
 
 export default function sitemap() {
-  const baseUrl = 'https://aindiaprinthouse.com';
+  const baseUrl = 'https://www.aiphplayingcards.in';
   const now = new Date().toISOString();
 
   /** Helper to build a sitemap entry. */
@@ -30,6 +30,7 @@ export default function sitemap() {
   urls.push(entry('/', 'weekly', 1.0));          // Homepage — highest priority
   urls.push(entry('/about-us', 'monthly', 0.8));
   urls.push(entry('/contact-us', 'monthly', 0.8));
+  urls.push(entry('/location', 'monthly', 0.8));
 
   /* ── 2. Master product pages ─────────────────────────────────────── */
   for (const product of PRODUCTS) {
@@ -58,12 +59,13 @@ export default function sitemap() {
     }
   }
 
-  /* ── 5. Location about & contact pages ───────────────────────────── */
+  /* ── 5. Location about, contact & location pages ─────────────────── */
   for (const location of LOCATIONS) {
     if (location.slug === 'india') continue;
 
     urls.push(entry(`/${location.slug}/about-us`, 'monthly', 0.6));
     urls.push(entry(`/${location.slug}/contact-us`, 'monthly', 0.6));
+    urls.push(entry(`/${location.slug}/location`, 'monthly', 0.6));
   }
 
   return urls;
